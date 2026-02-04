@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virtual Lab Berbasis STEM</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#163e7a;
+      --shadow:0 18px 46px rgba(0,0,0,.28);
+      --stroke-xl:14px;  /* outline VIRTUAL LAB */
+      --stroke-md:10px;  /* outline STEM */
+      --stroke-sm:6px;   /* outline BERBASIS & MATERI */
+      --desk-w:70%;      /* ukuran meja = 70% */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; min-height:100dvh; display:grid; place-items:center;
+      background:#eaf3ff; color:var(--ink);
+      font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    /* ===== multi-screen (Page 1 & Page 2 di file yang sama) ===== */
+    .screen{ width:100%; display:none; place-items:center; animation:fade .28s ease; }
+    .screen.active{ display:grid; }
+    @keyframes fade{ from{opacity:.7; transform:translateY(2px)} to{opacity:1; transform:none} }
+
+    /* ===== Stage / Card 16:9 ===== */
+    .stage{
+      position:relative; width:min(1320px,98vw); aspect-ratio:16/9;
+      border-radius:28px; overflow:hidden; background:#b9d5e6; box-shadow:var(--shadow);
+      isolation:isolate;
+    }
+    .bg{ position:absolute; inset:0; background:url("assets/bg-lab.png") center/cover no-repeat; z-index:0; }
+
+    /* Karakter */
+    .char{
+      position:absolute; bottom:0; z-index:3; pointer-events:none; user-select:none;
+      filter:drop-shadow(0 10px 20px rgba(0,0,0,.12));
+    }
+    .char.left{ left:-2%; width:min(30%, 340px); }
+    .char.right{ right:-1%; width:min(28%, 320px); }
+
+    /* Meja 70% */
+    .desk{
+      position:absolute; left:50%; transform:translateX(-50%);
+      bottom:-1.3%; width:var(--desk-w); z-index:2; pointer-events:none;
+    }
+
+    /* ===== Judul mendatar + halo putih bersih ===== */
+    .title{
+      position:absolute; left:50%; top:6.2%; transform:translateX(-50%);
+      z-index:4; display:flex; flex-direction:column; align-items:center;
+      text-align:center; user-select:none; width:94%;
+    }
+    .sticker{
+      font-family:"Fredoka", system-ui, sans-serif; font-weight:800;
+      line-height:1.02; letter-spacing:.02em; margin:0; color:#163e7a;
+      -webkit-text-stroke: var(--stroke-xl) #fff; paint-order: stroke fill;
+      text-shadow: 0 0 6px rgba(255,255,255,.96), 0 0 14px rgba(255,255,255,.92), 0 0 28px rgba(255,255,255,.88);
+      mix-blend-mode: normal;
+    }
+    .t-virtual{ font-size:clamp(46px,8.6vw,138px); }
+    .t-berbasis{ font-size:clamp(22px,4.6vw,64px); -webkit-text-stroke:var(--stroke-sm) #fff; color:#ff7f66; margin-top:.05em; }
+    .t-stem{ font-size:clamp(40px,7.2vw,112px); -webkit-text-stroke:var(--stroke-md) #fff; margin-top:.02em; }
+    .t-materi{ font-size:clamp(22px,4.6vw,62px); -webkit-text-stroke:var(--stroke-sm) #fff; color:#ff7f66; margin-top:.1em; }
+
+    /* Tombol Play (PNG glossy) */
+    .play{
+      position:absolute; left:50%; bottom:clamp(18px,3.6vh,40px);
+      transform:translateX(-50%);
+      width:clamp(110px,15vw,220px); aspect-ratio:1/1; border:none; background:transparent;
+      padding:0; cursor:pointer; z-index:5;
+    }
+    .play img{ width:100%; height:100%; object-fit:contain; display:block; pointer-events:none;
+      filter: drop-shadow(0 18px 42px rgba(0,0,0,.35)); transition: transform .16s ease, filter .16s ease; }
+    .play:hover img{ transform:scale(1.05); filter:drop-shadow(0 22px 48px rgba(0,0,0,.42)); }
+    .play:active img{ transform:scale(.98); }
+    .play::after{ /* batang tipis di bawah tombol */
+      content:""; position:absolute; left:50%; top:96%; transform:translateX(-50%);
+      width:3px; height:clamp(28px,7vh,70px); background:#1b1b1f; border-radius:2px; opacity:.9;
+    }
+    .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+
+    /* ===================== PAGE 2 (Profil Siswa) ===================== */
+    /* pakai stage yang sama: bg lab + papan tulis + form */
+    .board{
+      position:absolute; left:50%; top:10%;
+      transform:translateX(-50%);
+      width:min(90%, 1100px);
+      z-index:2; pointer-events:none; user-select:none;
+      filter:drop-shadow(0 12px 28px rgba(0,0,0,.18));
+    }
+
+    /* Area kerja di atas papan (menyamai margin dalam papan) */
+    .board-area{
+      position:absolute; left:50%; top:18%;
+      transform:translateX(-50%);
+      width:min(80%, 900px); height:62%;
+      z-index:3; display:grid; grid-template-rows:auto 1fr auto; row-gap:min(2.2vh,22px);
+      place-items:center;
+    }
+
+    .p2-heading{
+      font-family:"Fredoka", system-ui, sans-serif; font-weight:800;
+      color:#ff7f66; margin:0;
+      font-size:clamp(28px,5.2vw,64px);
+      -webkit-text-stroke:6px #fff; paint-order:stroke fill;
+      text-shadow: 0 0 6px rgba(255,255,255,.96), 0 0 16px rgba(255,255,255,.9);
+    }
+
+    .profile-grid{
+      width:100%; display:grid; align-items:center;
+      grid-template-columns: 1fr 1.6fr; column-gap:min(4vw,36px);
+    }
+    .avatar{
+      width:min(240px, 36vw); aspect-ratio:1/1; border-radius:50%;
+      background: radial-gradient(circle at 40% 35%, #cfd8e6 0%, #bfc9d8 60%, #aeb7c7 100%);
+      position:relative; overflow:hidden;
+      display:grid; place-items:center;
+    }
+    .avatar::before{
+      content:""; width:46%; aspect-ratio:1/1; border-radius:50%;
+      background:#6b778a; position:absolute; top:26%; left:27%;
+    }
+    .avatar::after{
+      content:""; width:80%; height:46%; border-top-left-radius:100vmax; border-top-right-radius:100vmax;
+      background:#6b778a; position:absolute; bottom:8%; left:10%;
+    }
+
+    .form{
+      width:100%;
+      display:grid; row-gap:min(3vh,22px);
+      font-weight:700; color:#0d1b2b;
+    }
+    .field{
+      display:grid; row-gap:6px;
+    }
+    .label{ font-size:clamp(14px,1.8vw,18px); opacity:.9; }
+    .input{
+      width:100%; border:none; outline:none; background:transparent;
+      font-size:clamp(16px,2vw,20px); padding:.35rem .1rem .15rem;
+      border-bottom:4px solid #0d1b2b;
+    }
+
+    .gold-btn{
+      position:relative; display:inline-grid; place-items:center;
+      width:min(260px, 38vw); aspect-ratio: 3.8 / 1.3;
+      border:none; background:transparent; cursor:pointer;
+      filter: drop-shadow(0 8px 14px rgba(0,0,0,.18));
+    }
+    .gold-btn img{ position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+    .gold-btn span{
+      position:relative; z-index:1; font-family:"Fredoka", system-ui, sans-serif; font-weight:800;
+      font-size:clamp(18px,2.6vw,28px); color:#2a1b00;
+      text-shadow:0 1px 0 rgba(255,255,255,.65), 0 2px 8px rgba(0,0,0,.18);
+    }
+
+    /* tombol kembali kecil di pojok */
+    .p2-back{
+      position:absolute; right:18px; top:18px; z-index:5;
+      background:#ffffff; border:1px solid rgba(0,0,0,.08);
+      border-radius:12px; padding:.45rem .75rem; cursor:pointer; font-weight:600;
+      box-shadow:0 10px 22px rgba(0,0,0,.08);
+    }
+
+    /* Responsif kecil */
+    @media (max-width:900px){
+      .profile-grid{ grid-template-columns:1fr; row-gap:18px; }
+      .avatar{ margin-inline:auto; }
+      .board-area{ width:84%; top:17%; }
+    }
+    @media (max-width:560px){
+      .t-virtual{ -webkit-text-stroke:9px #fff }
+      .t-stem{ -webkit-text-stroke:7px #fff }
+      .t-berbasis,.t-materi{ -webkit-text-stroke:4px #fff }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================== PAGE 1 ========================== -->
+  <section id="screen1" class="screen active" aria-label="Halaman 1">
+    <main class="stage" role="main">
+      <div class="bg" aria-hidden="true"></div>
+
+      <!-- Karakter -->
+      <img class="char left"  src="assets/char-left.png"  alt="Asisten laboratorium membawa labu erlenmeyer" />
+      <img class="char right" src="assets/char-right.png" alt="Asisten laboratorium membaca buku" />
+
+      <!-- Meja -->
+      <img class="desk" src="assets/desk-lab.png" alt="" aria-hidden="true" />
+
+      <!-- Judul -->
+      <div class="title">
+        <h1 class="sticker t-virtual">VIRTUAL LAB</h1>
+        <h2 class="sticker t-berbasis">BERBASIS</h2>
+        <h2 class="sticker t-stem">STEM</h2>
+        <h3 class="sticker t-materi">MATERI ZAT MAKANAN</h3>
+      </div>
+
+      <!-- Play → Page 2 -->
+      <button id="playBtn" class="play" aria-label="Mulai / Play">
+        <img src="assets/btn-play.png" alt="" />
+        <span class="sr-only">Mulai</span>
+      </button>
+    </main>
+  </section>
+
+  <!-- ========================== PAGE 2 ========================== -->
+  <section id="screen2" class="screen" aria-label="Halaman 2: Profil Siswa">
+    <main class="stage">
+      <div class="bg" aria-hidden="true"></div>
+
+      <!-- papan tulis -->
+      <img class="board" src="assets/board.png" alt="" />
+
+      <!-- tombol kembali kecil -->
+      <button id="backBtn" class="p2-back" type="button">← Kembali</button>
+
+      <!-- area konten di dalam papan -->
+      <div class="board-area">
+        <h2 class="p2-heading">PROFIIL SISWA</h2>
+
+        <div class="profile-grid">
+          <div class="avatar" aria-hidden="true"></div>
+
+          <form id="formProfil" class="form" autocomplete="on">
+            <label class="field">
+              <span class="label">Masukan Nama</span>
+              <input class="input" name="nama" type="text" placeholder="Nama lengkap" required />
+            </label>
+
+            <label class="field">
+              <span class="label">Masukan Email</span>
+              <input class="input" name="email" type="email" placeholder="email@contoh.com" required />
+            </label>
+
+            <button class="gold-btn" type="submit" aria-label="Masuk">
+              <img src="assets/btn-gold.png" alt="" />
+              <span>Masuk</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <script>
+    // Toggle antar halaman tanpa ganti URL
+    const s1 = document.getElementById('screen1');
+    const s2 = document.getElementById('screen2');
+    document.getElementById('playBtn').addEventListener('click', () => { s1.classList.remove('active'); s2.classList.add('active'); });
+    document.getElementById('backBtn').addEventListener('click', () => { s2.classList.remove('active'); s1.classList.add('active'); });
+
+    // Form "Masuk" → simpan ke localStorage dan pemberitahuan kecil
+    const form = document.getElementById('formProfil');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      localStorage.setItem('profilSiswa', JSON.stringify(data));
+      // feedback sederhana
+      const btn = e.currentTarget.querySelector('.gold-btn span');
+      const old = btn.textContent;
+      btn.textContent = 'Tersimpan ✓';
+      setTimeout(()=> btn.textContent = old, 1500);
+    });
+  </script>
+</body>
+</html>
