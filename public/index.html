@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Virtual Lab Berbasis STEM</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ========================== PAGE 1 ========================== -->
+<section id="screen1" class="screen" aria-label="Halaman 1">
+  <main class="stage">
+    <div class="bg"></div>
+    <img class="char left"  src="assets/char-left.png"  alt="">
+    <img class="char right" src="assets/char-right.png" alt="">
+    <img class="desk" src="assets/desk-lab.png" alt="">
+
+    <div class="title">
+      <h1 class="sticker t-virtual">VIRTUAL LAB</h1>
+      <h2 class="sticker t-berbasis">BERBASIS</h2>
+      <h2 class="sticker t-stem">STEM</h2>
+      <h3 class="sticker t-materi">MATERI ZAT MAKANAN</h3>
+    </div>
+
+    <button id="playBtn" class="play" aria-label="Mulai / Play">
+      <img src="assets/btn-play.png" alt="">
+      <span class="sr-only">Mulai</span>
+    </button>
+  </main>
+</section>
+
+<!-- ========================== PAGE 2 ========================== -->
+<section id="screen2" class="screen" aria-label="Halaman 2: Profil Siswa">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button id="backBtn" class="p2-back" type="button">← Kembali</button>
+
+    <div class="board-area">
+      <h2 class="p2-heading">PROFIIL SISWA</h2>
+
+      <div class="profile-grid">
+        <div class="avatar"><img src="assets/avatar.png" alt="Foto profil siswa"></div>
+
+        <form id="formProfil" class="form" autocomplete="on">
+          <label class="field">
+            <span class="label">Masukan Nama</span>
+            <input class="input" name="nama" type="text" placeholder="Nama lengkap" required>
+          </label>
+
+          <label class="field">
+            <span class="label">Masukan Email</span>
+            <input class="input" name="email" type="email" placeholder="email@contoh.com" required>
+          </label>
+
+          <button class="gold-btn" type="submit" aria-label="Masuk">
+            <img src="assets/btn-gold.png" alt="">
+            <span>Masuk</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 3 ========================== -->
+<section id="screen3" class="screen" aria-label="Halaman 3: Menu Utama">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <button id="toPage2" class="btn-mini" type="button">← Kembali</button>
+    <div class="menu-title">MENU UTAMA</div>
+
+    <!-- Meja & maskot -->
+    <img class="desk-top"   src="assets/countertop.png" alt="">
+    <img class="mascot"     src="assets/mascot-kid.png"  alt="Maskot">
+    <img class="desk-front" src="assets/desk.png"        alt="">
+
+    <!-- Setengah orbit -->
+    <div class="orbit semi" style="--n:7; --arc-start:160deg; --arc-end:380deg;">
+      <div class="bubble" style="--i:0" data-action="deskripsi"    title="Deskripsi Virtual Lab"><img src="assets/virtual lab.png" alt=""></div>
+      <div class="bubble" style="--i:1" data-action="pendahuluan"  title="Pendahuluan"><img src="assets/pendahuluan.png" alt=""></div>
+      <div class="bubble" style="--i:2" data-action="materi"       title="materi"><img src="assets/materi.png" alt=""></div>
+      <div class="bubble" style="--i:3" data-action="virtuallab"   title="Virtual Laboratorium"><img src="assets/stem-zone.png" alt=""></div>
+      <div class="bubble" style="--i:4" data-action="evaluasi"     title="Evaluasi"><img src="assets/Refleksi.png" alt=""></div>
+      <div class="bubble" style="--i:5" data-action="profil"       title="Profil Pengembang"><img src="assets/profil-pengembang.png" alt=""></div>
+      <div class="bubble" style="--i:6" data-action="biodata"      title="Biodata Siswa"><img src="assets/biodata-siswa.png" alt=""></div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 4 ========================== -->
+<section id="screen4" class="screen p4-wrap" aria-label="Halaman 4: Profil Pengembang">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button id="p4Home" class="home-btn" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <div class="p4-area">
+      <h2 class="p4-title">PROFIL PENGEMBANG</h2>
+
+      <div class="p4-sections">
+        <section class="p4-section">
+          <h3 class="section-title">Pengembang Media</h3>
+          <div class="dev-photo"><img src="assets/foto-dien.png" alt="Foto Pengembang"></div>
+          <div class="info">
+            <div class="row"><span class="ic ic-name"></span><span>Nama</span><span class="dots">:</span><span class="value">Dien Amelia Defani A.P</span></div>
+            <div class="row"><span class="ic ic-nim"></span><span>NIM</span><span class="dots">:</span><span class="value">22030204112</span></div>
+            <div class="row"><span class="ic ic-major"></span><span>Program Studi</span><span class="dots">:</span><span class="value">Pendidikan Biologi</span></div>
+            <div class="row"><span class="ic ic-campus"></span><span>Perguruan Tinggi</span><span class="dots">:</span><span class="value">Universitas Negeri Surabaya</span></div>
+            <div class="row"><span class="ic ic-mail"></span><span>Email</span><span class="dots">:</span><span class="value">dien.22112@mhs.unesa.ac.id</span></div>
+          </div>
+        </section>
+
+        <section class="p4-section">
+          <h3 class="section-title">Dosen Pembimbing</h3>
+          <div class="mentor-photo"><img src="assets/foto-dosen.png" alt="Foto Dosen Pembimbing"></div>
+          <div class="info">
+            <div class="row"><span class="ic ic-name"></span><span>Nama</span><span class="dots">:</span><span class="value">Dr. Pramita Yakub, S.Pd., M.Pd</span></div>
+            <div class="row"><span class="ic ic-nip"></span><span>NIP</span><span class="dots">:</span><span class="value">198802212015042001</span></div>
+            <div class="row"><span class="ic ic-mail"></span><span>Email</span><span class="dots">:</span><span class="value">pramitayakub@unesa.ac.id</span></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 5 ========================== -->
+<section id="screen5" class="screen intro-wrap" aria-label="Halaman 5: Pendahuluan (Capaian)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="introHome1" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="introPrev1" aria-label="Kembali ke Menu"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="introNext1" aria-label="Lanjut ke Tujuan"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">PENDAHULUAN</h2>
+      <div class="intro-body">
+        <h3 class="intro-sub">Capaian Pembelajaran</h3>
+        <p>
+          Peserta didik mampu menganalisis struktur dan fungsi biomolekul utama (karbohidrat,
+          protein, lemak, vitamin, dan mineral) serta peranannya dalam proses metabolisme tubuh manusia.
+          Peserta didik juga mampu mengaitkan asupan zat makanan dengan kondisi kesehatan,
+          termasuk dampaknya terhadap obesitas, melalui penyelidikan ilmiah dan pemanfaatan teknologi.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 6 ========================== -->
+<section id="screen6" class="screen intro-wrap" aria-label="Halaman 6: Pendahuluan (Tujuan)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="introHome2" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="introPrev2" aria-label="Kembali ke Capaian"><img src="assets/btn-prev.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">PENDAHULUAN</h2>
+      <div class="intro-body">
+        <h3 class="intro-sub">Tujuan Pembelajaran</h3>
+        <ul>
+          <li>Peserta didik mampu merancang dan melakukan penyelidikan sederhana menggunakan virtual lab
+              untuk menguji kandungan zat makanan pada berbagai sampel bahan pangan.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 7 ========================== -->
+<section id="screen7" class="screen intro-wrap" aria-label="Halaman 7: Deskripsi Virtual Lab (1)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="descHome1" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="descPrev1" aria-label="Kembali ke Menu"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="descNext1" aria-label="Lanjut ke Deskripsi 2"><img src="assets/btn-next.png" alt=""></button>
+    <div class="intro-area">
+      <h2 class="intro-title">DESKRIPSI VIRTUAL LAB</h2>
+      <div class="intro-body">
+        <p>
+          Virtual lab ini menggunakan materi biologi pada sub bab zat makanan. Kemudian platform ini mengimplementasikan pendekatan STEM (Science, Technology, Engineering, Mathematics) secara terpadu untuk mendalami materi zat makanan, sekaligus mengaitkannya dengan fenomena global dan nasional yang mendesak: obesitas. Virtual lab ini selaras dengan semangat Kurikulum Merdeka, yang mendorong pembelajaran berbasis pemecahan masalah, dan dan kontekstual. Peserta didik tidak hanya menghafal fakta, tetapi diajak untuk berpikir kritis, bereksperimen, menganalisis data, dan merumuskan solusi atas masalah nyata. Pembelajaran menjadi lebih bermakna karena relevan dengan isu kesehatan yang dekat dengan kehidupan sehari-hari peserta didik.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 8 ========================== -->
+<section id="screen8" class="screen intro-wrap" aria-label="Halaman 8: Deskripsi Virtual Lab (2)">
+  <main class="stage">
+    <div class="bg"></div>
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="descHome2" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="descPrev2" aria-label="Kembali ke Deskripsi 1"><img src="assets/btn-prev.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">DESKRIPSI VIRTUAL LAB</h2>
+      <div class="intro-body">
+        <p>
+          dan kontekstual. Peserta didik tidak hanya menghafal fakta, tetapi diajak untuk berpikir kritis,
+          bereksperimen, menganalisis data, dan merumuskan solusi atas masalah nyata. Pembelajaran menjadi
+          lebih bermakna karena relevan dengan isu kesehatan yang dekat dengan kehidupan sehari-hari
+          peserta didik.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 9 ========================== -->
+<section id="screen9" class="screen intro-wrap" aria-label="Halaman 9: Materi (Zat Makanan 1)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome1" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <!-- Hanya NEXT -->
+    <button class="nav-btn nav-next" id="mat9Next" aria-label="Lanjut ke Materi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p class="intro-sub">Zat Makanan</p>
+        <p>
+          Zat makanan merupakan bahan-bahan yang diperlukan oleh tubuh agar tetap hidup.
+          Zat makanan dapat dibagi menjadi 2 jenis, yaitu zat makanan makro (karbohidrat, lemak, protein)
+          dan zat makanan mikro (vitamin, mineral). Makanan memiliki berbagai fungsi, antara lain:
+        </p>
+        <ul>
+          <li>Pertumbuhan dan perkembangan tubuh.</li>
+          <li>Pemeliharaan dan perbaikan sel-sel tubuh yang telah rusak atau tua.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 10 ========================== -->
+<section id="screen10" class="screen intro-wrap" aria-label="Halaman 10: Materi (Zat Makanan 2)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome2" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <!-- Prev & Next -->
+    <button class="nav-btn nav-prev" id="mat10Prev" aria-label="Kembali ke Materi 1"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat10Next" aria-label="Lanjut ke Materi 3"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <ul>
+          <li>Pengaturan metabolisme tubuh.</li>
+          <li>Penjaga keseimbangan cairan tubuh.</li>
+          <li>Pertahanan tubuh terhadap penyakit.</li>
+          <li>Penghasil energi.</li>
+        </ul>
+        <p>Selain itu, makanan juga memiliki persyaratan untuk mencapai makanan yang baik, sebagai berikut:</p>
+        <ul>
+          <li>Higenis, tidak mengandung kuman-kuman, serta zat racun yang membahayakan tubuh.</li>
+          <li>Bergizi, cukup mengandung kalori, karbohidrat, lemak, dan protein yang mengandung 10 asam amino esensial.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 11 ========================== -->
+<section id="screen11" class="screen intro-wrap" aria-label="Halaman 11: Materi (Zat Makanan 3)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome3" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat11Prev" aria-label="Kembali ke Materi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat11Next" aria-label="Lanjut ke Karbohidrat"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p class="intro-sub">Syarat Makanan yang Baik (lanjutan)</p>
+        <ul>
+          <li>Mudah dicerna.</li>
+          <li>Mengandung vitamin dan mineral.</li>
+          <li>Cukup mengandung air.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 12 ========================== -->
+<section id="screen12" class="screen intro-wrap" aria-label="Halaman 12: Materi (Karbohidrat 1)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome4" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat12Prev" aria-label="Kembali ke Materi 3"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat12Next" aria-label="Lanjut ke Karbohidrat 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <h3 class="intro-sub">Karbohidrat</h3>
+        <p>
+          Karbohidrat merupakan salah satu dari tiga makronutrien utama yang dibutuhkan oleh tubuh manusia, selain protein dan lemak Karbohidrat merupakan senyawa yang mengandung C,H, dan Odengan perbandingan H dan O = 2 : 1 dan dinyatakan dengan rumus umum Cn(H2O)n. Karbohidrat berperan penting baik sebagai sumber energi, komponen struktural sel, maupun molekul pengatur dalam proses metabolisme. Karbohidrat dapat ditemukan dalam berbagai bentuk dan sumber, mulai dari makanan sehari-hari seperti nasi, roti, gula, buah-buahan, hingga dalam struktur
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 13 ========================== -->
+<section id="screen13" class="screen intro-wrap" aria-label="Halaman 13: Materi (Karbohidrat 2)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome5" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat13Prev" aria-label="Kembali ke Karbohidrat 1"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat13Next" aria-label="Lanjut ke Karbohidrat 3"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p>
+          dinding sel tumbuhan dan jaringan hewan. Secara struktur, Karbohidrat terbagi menjadi 3 yaitu, Monosakarida, Disakarida, dan Polisakarida. Monosakarida adalah bentuk paling sederhana dari karbohidrat dan tidak dapat dipecah lagi menjadi molekul gula yang lebih kecil melalui hidrolisis. Contoh monosakarida yang paling penting secara biologis adalah glukosa, yang merupakan sumber energi utama dalam sel-sel tubuh. Selain glukosa, terdapat pula fruktosa (gula buah) yang memiliki rasa lebih manis, dan galaktosa, yang biasanya ditemukan dalam susu sebagai komponen laktosa. Ketiga monosakarida ini memiliki rumus molekul  
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 14 ========================== -->
+<section id="screen14" class="screen intro-wrap" aria-label="Halaman 14: Materi (Karbohidrat 3)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome6" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat14Prev" aria-label="Kembali ke Karbohidrat 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat14Next" aria-label="Lanjut ke Karbohidrat 4"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p>
+          yang sama (C₆H₁₂O₆), tetapi berbeda dalam struktur isomeriknya, yang memengaruhi sifat kimia dan biologisnya
+        </p>
+
+        <figure class="intro-figure">
+          <img src="assets/monosakarida.png" alt="Struktur glukosa, galaktosa, dan fruktosa (monosakarida)">
+          <figcaption>Gambar 1. Monosakarida. (Sumber : edubio.info)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 15 ========================== -->
+<section id="screen15" class="screen intro-wrap" aria-label="Halaman 15: Materi (Karbohidrat 4)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome7" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat15Prev" aria-label="Kembali ke Karbohidrat 3"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat15Next" aria-label="Lanjut ke Karbohidrat 5"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p>
+          Gabungan dua monosakarida membentuk disakarida. Contohnya, glukosa dan fruktosa bergabung membentuk sukrosa (gula meja), glukosa dan galaktosa membentuk laktosa (gula susu), serta dua molekul glukosa membentuk maltosa (hasil pemecahan pati). Disakarida ini umum ditemukan dalam makanan dan harus dihidrolisis oleh enzim pencernaan seperti sukrase, laktase, dan maltase agar dapat diserap oleh usus halus. Kekurangan enzim tertentu, seperti laktase, dapat menyebabkan intoleransi laktosa, sebuah kondisi yang umum terjadi pada sebagian populasi manusia.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 16 ========================== -->
+<section id="screen16" class="screen intro-wrap" aria-label="Halaman 16: Materi (Karbohidrat 5)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome8" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat16Prev" aria-label="Kembali ke Karbohidrat 4"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat16Next" aria-label="Lanjut ke Karbohidrat 6"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <figure class="intro-figure">
+          <img src="assets/disakarida.png" alt="Struktur sukrosa, maltosa, dan laktosa (disakarida)">
+          <figcaption>Gambar 2. Disakarida. (Sumber : edubio.info)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 17 ========================== -->
+<section id="screen17" class="screen intro-wrap" aria-label="Halaman 17: Materi (Karbohidrat 6)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome9" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat17Prev" aria-label="Kembali ke Karbohidrat 5"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat17Next" aria-label="Lanjut ke Karbohidrat 7"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p>
+          Jenis karbohidrat yang lebih kompleks adalah polisakarida, yaitu rantai panjang yang terdiri dari puluhan hingga ribuan unit monosakarida. Polisakarida memiliki fungsi utama sebagai cadangan energi dan komponen struktural. Contoh polisakarida penyimpan energi adalah amilum, yang merupakan bentuk penyimpanan karbohidrat pada tumbuhan, terutama di umbi-umbian, biji-bijian, dan kacang-kacangan. Amilum terdiri dari dua komponen: amilosa (rantai lurus glukosa) dan amilopektin (rantai bercabang). Kemudian, selulosa adalah polisakarida struktural yang menyusun dinding sel tumbuhan.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 18 ========================== -->
+<section id="screen18" class="screen intro-wrap" aria-label="Halaman 18: Materi (Karbohidrat 7)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome10" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat18Prev" aria-label="Kembali ke Karbohidrat 6"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat18Next" aria-label="Lanjut ke Karbohidrat 8"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <figure class="intro-figure">
+          <img src="assets/Polisakarida.png" alt="Ilustrasi polisakarida">
+          <figcaption>Gambar 3. Polisakarida. (Sumber : edubio.info)</figcaption>
+        </figure>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 19 ========================== -->
+<section id="screen19" class="screen intro-wrap" aria-label="Halaman 19: Materi (Karbohidrat 8)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome11" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat19Prev" aria-label="Kembali ke Karbohidrat 7"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat19Next" aria-label="Lanjut ke Karbohidrat 9"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p>
+          Karbohidrat memiliki peran dalam pengaturan metabolisme lemak dan protein. Saat asupan karbohidrat cukup, tubuh tidak perlu memecah protein otot untuk diubah menjadi glukosa (glukoneogenesis), sehingga protein dapat digunakan untuk fungsi pembentukan jaringan dan enzim. Karbohidrat juga mencegah terjadinya ketosis berlebihan, yaitu akumulasi keton tubuh akibat pembakaran lemak yang tidak sempurna saat kekurangan glukosa. Namun, meskipun penting, konsumsi karbohidrat yang tidak seimbang dapat menimbulkan dampak negatif terhadap kesehatan.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 20 ========================== -->
+<section id="screen20" class="screen intro-wrap" aria-label="Halaman 20: Materi (Karbohidrat 9)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome12" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat20Prev" aria-label="Kembali ke Karbohidrat 8"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat20Next" aria-label="Ke Lemak 1"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p>
+          Karbohidrat olahan seperti gula tambahan, roti putih, dan makanan siap saji memiliki indeks glikemik (IG) tinggi, artinya cepat diubah menjadi glukosa dalam darah, menyebabkan lonjakan insulin. Pola konsumsi seperti ini secara kronis dapat menyebabkan resistensi insulin, diabetes tipe 2, obesitas, dan penyakit kardiovaskular.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 21 ========================== -->
+<section id="screen21" class="screen intro-wrap" aria-label="Halaman 21: Materi (Lemak 1)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome13" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat21Prev" aria-label="Kembali ke Karbohidrat 9"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat21Next" aria-label="Lanjut ke Lemak 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <h3 class="intro-sub">Lemak</h3>
+        <p><strong>Asam Lemak</strong></p>
+        <p>
+          Asam lemak adalah senyawa asam yang menyusun lemak. Asam lemak dibedakan menjadi dua, yaitu asam lemak jenuh dan asam lemak tidak jenuh. Asam lemak jenuh dapat disintesis tubuh sendiri, umumnya berbentuk padat (contoh: asam palmitat, stearat, dan kaprilat). Asam lemak tidak jenuh umumnya berbentuk cair dan tidak dapat disintesis tubuh sendiri sehingga harus diperoleh dari luar (contoh: asam oleat, linoleat, dan linolenat).
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 22 ========================== -->
+<section id="screen22" class="screen intro-wrap" aria-label="Halaman 22: Materi (Lemak 2)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome14" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat22Prev" aria-label="Kembali ke Lemak 1"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat22Next" aria-label="Ke Protein 1"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p><strong>Lemak Tak Jenuh</strong></p>
+        <p>
+          Perbedaan utama dengan lemak jenuh: memiliki ≥1 ikatan rangkap C=C, umumnya cair pada suhu kamar, dan cenderung lebih baik bagi profil kolesterol. Contoh: minyak zaitun, minyak kedelai. Lemak jenuh hanya memiliki ikatan tunggal C–C, cenderung padat (lemak hewani, susu penuh krim), dan biasanya mengandung kolesterol lebih tinggi.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 23 ========================== -->
+<section id="screen23" class="screen intro-wrap" aria-label="Halaman 23: Materi (Protein 1)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome15" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat23Prev" aria-label="Kembali ke Lemak 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat23Next" aria-label="Ke Protein 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <h3 class="intro-sub">Protein</h3>
+        <p>
+          Protein merupakan senyawa esensial bagi semua makhluk hidup; kira-kira 20% tubuh tersusun atas protein dengan konsentrasi tertinggi pada jaringan otot. Protein tersusun atas unit sederhana bernama asam amino. Dari ~20 jenis asam amino, sebagian bersifat esensial (tidak dapat disintesis tubuh; harus dari makanan) seperti metionin, valin, leusin, dan isoleusin, sedangkan sisanya non-esensial (dapat disintesis tubuh) misalnya tirosin, sistein, serin, dan prolin.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 24 ========================== -->
+<section id="screen24" class="screen intro-wrap" aria-label="Halaman 24: Materi (Protein 2)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome16" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat24Prev" aria-label="Kembali ke Protein 1"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat24Next" aria-label="Kembali ke Menu"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <h3 class="intro-sub">Protein</h3>
+
+        <p><strong>Fungsi asam amino:</strong></p>
+        <ol class="alpha">
+          <li>Menyusun protein, termasuk enzim.</li>
+          <li>Membentuk kerangka dasar berbagai senyawa penting dalam metabolisme.</li>
+          <li>Mengikat ion logam penting pada reaksi enzimatik.</li>
+        </ol>
+
+        <p class="intro-sub" style="margin-top:6px">Fungsi Protein:</p>
+        <ol class="decimal">
+          <li>Bahan sintesis substansi penting seperti hormon, enzim, antibodi, dan komponen sel/organela lainnya.</li>
+          <li>Perbaikan, pertumbuhan, dan pemeliharaan struktur sel serta jaringan berbagai organ tubuh.</li>
+        </ol>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 25 ========================== -->
+<section id="screen25" class="screen intro-wrap" aria-label="Halaman 25: Materi (Protein 3)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome17" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat25Prev" aria-label="Kembali ke Protein 1"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="mat25Next" aria-label="Kembali ke Menu"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <ol class="decimal">
+          <li>Sebagai sumber energi setelah karbohidrat.</li>
+          <li>Mengatur dan melaksanakan metabolisme tubuh.</li>
+          <li>Menjaga keseimbangan asam basa dan keseimbangan cairan tubuh.</li>
+          <li>Membantu tubuh dalam menghancurkan atau menetralkan zat asing yang masuk ke dalam tubuh.</li>
+          <li>Membantu mengangkut dan menyimpan zat-zat penting dalam tubuh, misalnya hemoglobin mengangkut oksigen.</li>
+        </ol>
+        <p>
+          Jumlah Kebutuhan Protein Pada umumnya kebutuhan protein untuk orang dewasa adalah satu gram per kilogram berat badan per hari. Bila asupan protein berlebih, protein tersebut tidak dapat disimpan dalam tubuh, tetapi harus dikeluarkan, diubah, atau di gunakan 
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 26 ========================== -->
+<section id="screen26" class="screen intro-wrap" aria-label="Halaman 25: Materi (Protein 3)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="matHome18" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="mat26Prev" aria-label="Kembali ke Protein 1"><img src="assets/btn-prev.png" alt=""></button>
+
+    <div class="intro-area">
+      <h2 class="intro-title">MATERI</h2>
+      <div class="intro-body">
+        <p>
+          sehingga terjadi keseimbangan protein normal. Bila asupan protein kurang, protein hanya cukup untuk untuk mengatur dan mengganti sel rusak, tidak untuk pertumbuhan. Keseimbangan ini disebut keseimbangan protein minimum
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 27 ========================== -->
+<section id="screen27" class="screen" aria-label="Halaman 27: Evaluasi (Pembuka)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <!-- tombol -->
+    <button class="home-btn" id="evalHome0" aria-label="Kembali ke Menu">
+      <img src="assets/btn-home.png" alt="">
+    </button>
+    <button class="nav-btn nav-next" id="evalStart" aria-label="Mulai Evaluasi">
+      <img src="assets/btn-next.png" alt="">
+    </button>
+
+    <!-- hero layout -->
+    <div class="eval-hero-wrap">
+      <!-- karakter di belakang meja -->
+      <img class="eval-char" src="assets/mascot-kid2.png" alt="Maskot">
+
+      <!-- meja laboratorium digeser ke kiri -->
+      <img class="eval-desk" src="assets/desk-lab.png" alt="Meja lab">
+
+      <!-- panel kecil di dinding + tulisan -->
+      <div class="eval-wall-panel">
+        <div class="eval-text">EVALUASI</div>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 28 ========================== -->
+<section id="screen28" class="screen intro-wrap" aria-label="Halaman 28: evaluasi">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome1" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval28Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="eval28Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>
+          Fenomena obesitas pada remaja menjadi isu kesehatan yang meresahkan di seluruh dunia, termasuk di Indonesia. Salah satu faktor utama yang sering disoroti adalah pola makan yang tidak seimbang, khususnya konsumsi gula berlebih dan asupan karbohidrat olahan yang tinggi. Banyak cemilan modern yang mengklaim sehat atau rendah gula, namun kenyataannya mungkin berbanding terbalik.
+        </p>
+        <p>
+          Di sebuah sekolah menengah, data terbaru menunjukkan peningkatan signifikan pada indeks massa tubuh (IMT) sebagian besar siswanya. Guru Biologi, Bu Amara, berinisiatif untuk mengajak siswanya menjadi.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 29 ========================== -->
+<section id="screen29" class="screen intro-wrap" aria-label="Halaman 29: evaluasi">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome2" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval29Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="eval29Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>
+          siswanya menjadi “detektif gizi” untuk mengungkap misteri di balik cemilan favorit mereka. Tujuannya adalah untuk memahami kandungan gula pereduksi dan pati (amilum) pada beberapa cemilan populer yang sering dikonsumsi siswa, dan menghubungkannya dengan potensi risiko obesitas.
+        </p>
+        <p>
+          Bu Amara menantang kelompok siswa untuk menguji beberapa sampel cemilan yang umum beredar, yang sering dikonsumsi sebagai pengganjal lapar atau pengganti makanan utama. Mereka harus mengidentifikasi cemilan mana yang tinggi gula pereduksi dan/atau tinggi pati, dan kemudian menganalisis implikasinya.
+        </p>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 30 ========================== -->
+<section id="screen30" class="screen intro-wrap" aria-label="Halaman 30: evaluasi">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome3" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval30Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="eval30Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>
+          terhadap asupan kalori dan risiko obesitas. Sampel Cemilan yang Diuji:
+        </p>
+        <ol class="decimal">
+          <li>Minuman Soda Rasa Buah (klaim: "Mengandung sari buah asli")</li>
+          <li>Biskuit Gandum Utuh (klaim: "Sumber serat, baik untuk diet")</li>
+          <li>Keripik Kentang Instan (klaim: "Cemilan ringan dan renyah")</li>
+          <li>Permen Jelly Kemasan (klaim: "Rasa buah alami, cemilan anak-anak")</li>
+          <li>Pisang Segar (sebagai kontrol positif untuk gula pereduksi alami)</li>
+          <li>RNasi Putih (sebagai kontrol positif untuk pati)</li>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 31 ========================== -->
+<section id="screen31" class="screen intro-wrap" aria-label="Halaman 31: evaluasi">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome4" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval31Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="eval31Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>
+          Prosedur Pengujian Laboratorium:
+        </p>
+        <p>A. Uji Benedict (untuk mendeteksi gula pereduksi)</p>
+          <ol class="decimal">
+            <li>Setiap sampel (dihaluskan/dilarutkan dalam air jika perlu) dimasukkan ke dalam tabung reaksi terpisah.</li>
+            <li>Ditambahkan reagen Benedict ke setiap tabung.</li>
+            <li>Masukkan 1 ml ekstrak cemilan ke dalam tabung reaksi yang sesuai.</li>
+            <li>Semua tabung dipanaskan dalam penangas air mendidih selama 5-10 menit.</li>
+            <li>Perubahan warna diamati dan dicatat.</li>
+          </ol>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 32 ========================== -->
+<section id="screen32" class="screen intro-wrap" aria-label="Halaman 31: evaluasi">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome5" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval32Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="eval32Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>B. Uji Iodin (untuk mendeteksi pati/amilum)</p>
+          <ol class="decimal">
+            <li>Sedikit sampel (dilarutkan atau potongan kecil) diletakkan di atas plat tetes atau cawan petri terpisah.</li>
+            <li>Ditambahkan 1-2 tetes larutan iodin (lugol) ke setiap sampel.</li>
+            <li>Perubahan warna diamati dan dicatat.</li>
+          </ol>
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 33 ========================== -->
+<section id="screen33" class="screen intro-wrap" aria-label="Halaman 31: evaluasi">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome6" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval33Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="eval33Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>Hasil Uji yang didapatkan :</p>
+        <img src="assets/tabel-eval.png" alt="Tabel hasil uji cemilan">
+      </div>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 34 ========================== -->
+<section id="screen34" class="screen intro-wrap" aria-label="Halaman 29: evaluasi">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome7" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval34Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
+    <button class="nav-btn nav-next" id="eval34Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>
+          Analisislah berdasarkan hasil pengamatan yang didapatkan, kemudian jawablah sesuai pertanyaan dibawah ini. Berikan alasan yang tepat!
+        </p>
+        <ol class="decimal">
+          <li>Berdasarkan prinsip uji Benedict, cemilan mana yang memiliki kandungan gula pereduksi paling tinggi? Jelaskan mengapa hasil tersebut dapat mengindikasikan risiko obesitas jika dikonsumsi berlebihan</li>
+          <li>Berdasarkan prinsip uji iodin, cemilan mana yang memiliki kandungan pati paling tinggi? Bagaimana konsumsi pati berlebih dari cemilan instan dapat berkontribusi pada penambahan berat badan?</li>
+          <li>Bandingkan hasil Minuman Soda Rasa Buah dan Permen Jelly Kemasan. Meskipun keduanya manis, adakah perbedaan dalam jenis kandungan gizi utamanya yang diidentifikasi oleh uji ini? Bagaimana ini bisa memengaruhi dampaknya pada tubuh?</li>
+          <li>Biskuit Gandum Utuh diklaim "baik untuk diet". Namun, hasil uji menunjukkan adanya gula pereduksi (meskipun tidak setinggi soda/jelly) dan pati yang signifikan. Bagaimana Anda akan menjelaskan temuan ini kepada teman-teman Anda? Apakah klaim "gandum utuh" secara otomatis berarti rendah kalori atau aman dari risiko obesitas jika dikonsumsi berlebihan?</li>
+          <li>Sebagai detektif gizi, apa kesimpulan utama Anda mengenai pola konsumsi cemilan di kalangan remaja berdasarkan hasil yang anda dapatkan.</li>
+        </ol>
+    </div>
+  </main>
+</section>
+
+<!-- ========================== PAGE 35 ========================== -->
+<section id="screen35" class="screen intro-wrap" aria-label="Halaman 35: evaluasi (unggah jawaban)">
+  <main class="stage">
+    <div class="bg"></div>
+
+    <img class="board" src="assets/board.png" alt="">
+    <button class="home-btn" id="evalHome8" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+
+    <button class="nav-btn nav-prev" id="eval35Prev" aria-label="Kembali ke pertanyaan"><img src="assets/btn-prev.png" alt=""></button>
+
+    <div class="intro-area">
+      <div class="intro-body">
+        <p>6. Kumpulkan hasil yang Anda kerjakan pada kode QR di bawah ini:</p>
+
+        <div class="qr-wrap">
+          <img src="assets/qr.png" alt="QR Code menuju Google Drive">
+          <a href="https://drive.google.com/" target="_blank" rel="noopener">https://drive.google.com/</a>
+        </div>
+      </div>
+    </div>
+  </main>
+</section>
+
+<script>
+  // ===== util: switch screen + persist
+  const screens = {
+    1: document.getElementById('screen1'),
+    2: document.getElementById('screen2'),
+    3: document.getElementById('screen3'),
+    4: document.getElementById('screen4'),
+    5: document.getElementById('screen5'),
+    6: document.getElementById('screen6'),
+    7: document.getElementById('screen7'),
+    8: document.getElementById('screen8'),
+    9: document.getElementById('screen9'),
+    10: document.getElementById('screen10'),
+    11: document.getElementById('screen11'),
+    12: document.getElementById('screen12'),
+    13: document.getElementById('screen13'),
+    14: document.getElementById('screen14'),
+    15: document.getElementById('screen15'),
+    16: document.getElementById('screen16'),
+    17: document.getElementById('screen17'),
+    18: document.getElementById('screen18'),
+    19: document.getElementById('screen19'),
+    20: document.getElementById('screen20'),
+    21: document.getElementById('screen21'),
+    22: document.getElementById('screen22'),
+    23: document.getElementById('screen23'),
+    24: document.getElementById('screen24'),
+    25: document.getElementById('screen25'),
+    26: document.getElementById('screen26'),
+    27: document.getElementById('screen27'),
+    28: document.getElementById('screen28'),
+    29: document.getElementById('screen29'),
+    30: document.getElementById('screen30'),
+    31: document.getElementById('screen31'),
+    32: document.getElementById('screen32'),
+    33: document.getElementById('screen33'),
+    34: document.getElementById('screen34'),
+    35: document.getElementById('screen35'),
+  };
+  function goTo(n){
+    Object.values(screens).forEach(s=>s && s.classList.remove('active'));
+    screens[n]?.classList.add('active');
+    localStorage.setItem('currentScreen', String(n));
+  }
+
+  // ===== nav events umum
+  document.getElementById('playBtn').addEventListener('click', ()=> goTo(2));
+  document.getElementById('backBtn').addEventListener('click', ()=> goTo(1));
+  document.getElementById('toPage2').addEventListener('click', ()=> goTo(2));
+  document.getElementById('p4Home').addEventListener('click', ()=> goTo(3));
+
+  // Home & nav di Pendahuluan
+  document.getElementById('introHome1').addEventListener('click', ()=> goTo(3));
+  document.getElementById('introHome2').addEventListener('click', ()=> goTo(3));
+  document.getElementById('introPrev1').addEventListener('click', ()=> goTo(3));
+  document.getElementById('introNext1').addEventListener('click', ()=> goTo(6));
+  document.getElementById('introPrev2').addEventListener('click', ()=> goTo(5));
+
+  // Home & nav di Deskripsi
+  document.getElementById('descHome1').addEventListener('click', ()=> goTo(3));
+  document.getElementById('descHome2').addEventListener('click', ()=> goTo(3));
+  document.getElementById('descPrev1').addEventListener('click', ()=> goTo(3));
+  document.getElementById('descNext1').addEventListener('click', ()=> goTo(8));
+  document.getElementById('descPrev2').addEventListener('click', ()=> goTo(7));
+
+  // Home & nav di Materi
+  document.getElementById('matHome1').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome2').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome3').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome4').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome5').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome6').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome7').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome8').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome9').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome10').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome11').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome12').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome13').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome14').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome15').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome16').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome17').addEventListener('click', ()=> goTo(3));
+  document.getElementById('matHome18').addEventListener('click', ()=> goTo(3));
+
+  // FIX: id yang benar 'mat9Next' (bukan 'mat9next')
+  document.getElementById('mat9Next').addEventListener('click', ()=> goTo(10));
+
+  document.getElementById('mat10Prev').addEventListener('click', ()=> goTo(9));
+  document.getElementById('mat10Next').addEventListener('click', ()=> goTo(11));
+
+  document.getElementById('mat11Prev').addEventListener('click', ()=> goTo(10));
+  document.getElementById('mat11Next').addEventListener('click', ()=> goTo(12));
+
+  document.getElementById('mat12Prev').addEventListener('click', ()=> goTo(11));
+  document.getElementById('mat12Next').addEventListener('click', ()=> goTo(14));
+
+  document.getElementById('mat13Prev').addEventListener('click', ()=> goTo(12));
+  document.getElementById('mat13Next').addEventListener('click', ()=> goTo(14));
+
+  document.getElementById('mat14Prev').addEventListener('click', ()=> goTo(13));
+  document.getElementById('mat14Next').addEventListener('click', ()=> goTo(15));
+
+  document.getElementById('mat15Prev').addEventListener('click', ()=> goTo(14));
+  document.getElementById('mat15Next').addEventListener('click', ()=> goTo(16));
+
+  document.getElementById('mat16Prev').addEventListener('click', ()=> goTo(15));
+  document.getElementById('mat16Next').addEventListener('click', ()=> goTo(17));
+
+  document.getElementById('mat17Prev').addEventListener('click', ()=> goTo(16));
+  document.getElementById('mat17Next').addEventListener('click', ()=> goTo(18));
+
+  document.getElementById('mat18Prev').addEventListener('click', ()=> goTo(17));
+  document.getElementById('mat18Next').addEventListener('click', ()=> goTo(19));
+
+  document.getElementById('mat19Prev').addEventListener('click', ()=> goTo(18));
+  document.getElementById('mat19Next').addEventListener('click', ()=> goTo(20));
+
+  document.getElementById('mat20Prev').addEventListener('click', ()=> goTo(19));
+  document.getElementById('mat20Next').addEventListener('click', ()=> goTo(21));
+
+  document.getElementById('mat21Prev').addEventListener('click', ()=> goTo(20));
+  document.getElementById('mat21Next').addEventListener('click', ()=> goTo(22));
+
+  document.getElementById('mat22Prev').addEventListener('click', ()=> goTo(21));
+  document.getElementById('mat22Next').addEventListener('click', ()=> goTo(23));
+
+  document.getElementById('mat23Prev').addEventListener('click', ()=> goTo(22));
+  document.getElementById('mat23Next').addEventListener('click', ()=> goTo(24));
+
+  document.getElementById('mat24Prev').addEventListener('click', ()=> goTo(23));
+  document.getElementById('mat24Next').addEventListener('click', ()=> goTo(25));
+
+  document.getElementById('mat25Prev').addEventListener('click', ()=> goTo(24));
+  document.getElementById('mat25Next').addEventListener('click', ()=> goTo(26));
+
+  document.getElementById('mat26Prev').addEventListener('click', ()=> goTo(25));
+
+  // ===== Evaluasi
+  document.getElementById('evalHome0').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalStart').addEventListener('click', ()=> goTo(28));
+
+  document.getElementById('evalHome1').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalHome2').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalHome3').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalHome4').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalHome5').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalHome6').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalHome7').addEventListener('click', ()=> goTo(3));
+
+  document.getElementById('eval28Prev').addEventListener('click', ()=> goTo(27));
+  document.getElementById('eval28Next').addEventListener('click', ()=> goTo(29));
+
+  document.getElementById('eval29Prev').addEventListener('click', ()=> goTo(28));
+  document.getElementById('eval29Next').addEventListener('click', ()=> goTo(30));
+
+  document.getElementById('eval30Prev').addEventListener('click', ()=> goTo(29));
+  document.getElementById('eval30Next').addEventListener('click', ()=> goTo(31));
+
+  document.getElementById('eval31Prev').addEventListener('click', ()=> goTo(30));
+  document.getElementById('eval31Next').addEventListener('click', ()=> goTo(32));
+
+  document.getElementById('eval32Prev').addEventListener('click', ()=> goTo(31));
+  document.getElementById('eval32Next').addEventListener('click', ()=> goTo(33));
+
+  document.getElementById('eval33Prev').addEventListener('click', ()=> goTo(32)); 
+  document.getElementById('eval33Next').addEventListener('click', ()=> goTo(34));
+
+  document.getElementById('eval34Prev').addEventListener('click', ()=> goTo(33));
+  document.getElementById('eval34Next').addEventListener('click', ()=> goTo(35));
+
+  document.getElementById('eval35Prev').addEventListener('click', ()=> goTo(34));
+
+  // Klik bubble menu (Page 3)
+  document.querySelectorAll('.orbit .bubble').forEach(b=>{
+    b.addEventListener('click', () => {
+      const act = (b.dataset.action||'').toLowerCase();
+      if (act === 'profil')       return goTo(4);
+      if (act === 'pendahuluan')  return goTo(5);
+      if (act === 'deskripsi')    return goTo(7);
+      if (act === 'materi')       return goTo(9);
+      if (act === 'evaluasi')     return goTo(27); // <-- sudah bisa diklik
+      alert('Menu: ' + act);
+    });
+  });
+
+  // ===== interaksi pilihan jawaban sederhana
+  document.querySelectorAll('#screen28 .choice').forEach(choice=>{
+    choice.addEventListener('click', ()=>{
+      // reset state
+      document.querySelectorAll('#screen28 .choice').forEach(c=>{
+        c.classList.remove('selected','correct','wrong');
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+      // set selected
+      choice.classList.add('selected');
+      const input = choice.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+      // feedback cepat
+      if (choice.dataset.correct === 'true'){
+        choice.classList.remove('selected'); choice.classList.add('correct');
+      }else{
+        choice.classList.remove('selected'); choice.classList.add('wrong');
+      }
+    });
+  });
+
+  // ===== form profil (Page 2)
+  const form = document.getElementById('formProfil');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = Object.fromEntries(new FormData(form).entries());
+    localStorage.setItem('profilSiswa', JSON.stringify(data));
+    goTo(3);
+  });
+
+  // ===== restore state on load
+  (function init(){
+    try{
+      const saved = JSON.parse(localStorage.getItem('profilSiswa')||'{}');
+      if (saved.nama)  form.elements['nama'].value  = saved.nama;
+      if (saved.email) form.elements['email'].value = saved.email;
+    }catch{}
+    const last = Number(localStorage.getItem('currentScreen')||1);
+    if (last===3 && !localStorage.getItem('profilSiswa')) { goTo(2); return; }
+    // izinkan semua halaman yang tersedia
+    const allowed = new Set([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35]);
+    goTo(allowed.has(last)? last : 1);
+  })();
+</script>
+</body>
+</html>
