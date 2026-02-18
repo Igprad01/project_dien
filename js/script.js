@@ -36,6 +36,17 @@
     34: document.getElementById('screen34'),
     35: document.getElementById('screen35'),
     36: document.getElementById('screen36'),
+    37: document.getElementById('screen37'),
+    38: document.getElementById('screen38'),
+    39: document.getElementById('screen39'),
+    40: document.getElementById('screen40'),
+    41: document.getElementById('screen41'),
+    42: document.getElementById('screen42'),
+    43: document.getElementById('screen43'),
+    44: document.getElementById('screen44'),
+    45: document.getElementById('screen45'),
+    46: document.getElementById('screen46'),
+
   };
   function goTo(n){
     Object.values(screens).forEach(s=>s && s.classList.remove('active'));
@@ -169,79 +180,36 @@
   document.getElementById('eval34Prev').addEventListener('click', ()=> goTo(33));
   document.getElementById('eval34Next').addEventListener('click', ()=> goTo(35));
 
-  document.getElementById('eval35Prev').addEventListener('click', ()=> goTo(34));
-
-  // ===== Virtual Lab (Screen 36)
+  // screen to h
   document.getElementById('labHome') && document.getElementById('labHome').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_37') && document.getElementById('labHome_37').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_38') && document.getElementById('labHome_38').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_39') && document.getElementById('labHome_39').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_40') && document.getElementById('labHome_40').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_41') && document.getElementById('labHome_41').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_42') && document.getElementById('labHome_42').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_43') && document.getElementById('labHome_43').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_44') && document.getElementById('labHome_44').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_45') && document.getElementById('labHome_45').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_46') && document.getElementById('labHome_46').addEventListener('click', ()=> goTo(3));
 
-    // init Virtual Lab Logic here or load virtuallab.js separately
-    // Since users asked to separate internal JS, we can include the logic here or in a separate file.
-    // Assuming logic is simple enough to include here for now to ensure it works without extra file requests if acceptable, 
-    // OR we just assume virtuallab.js is loaded. 
-    // BUT the user said "externalize js" which we did for the main script. 
-    // To make sure Virtual Lab works, let's include its logic here wrapped in a check or event listener, 
-    // OR just add the event listeners since the HTML elements will exist when this runs (at bottom of body).
-    
-    const beaker = document.getElementById('beaker');
-    const status = document.getElementById('status');
-    const resetBtn = document.getElementById('resetBtn');
-  
-    if (beaker && status) {
-      const contents = new Set();
-  
-      document.querySelectorAll('.draggable').forEach(el => {
-        el.addEventListener('dragstart', (e) => {
-          const id = e.target.id;
-          e.dataTransfer?.setData('text/plain', id);
-        });
-        // el.addEventListener('mousedown', (e) => e.preventDefault()); // This might break drag in some browsers if not careful, removing for now or keeping default
-      });
-  
-      beaker.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        beaker.classList.add('drag-over');
-      });
-  
-      beaker.addEventListener('dragleave', () => {
-        beaker.classList.remove('drag-over');
-      });
-  
-      beaker.addEventListener('drop', (e) => {
-        e.preventDefault();
-        beaker.classList.remove('drag-over');
-        const item = e.dataTransfer?.getData('text/plain');
-        if (!item) return;
-  
-        contents.add(item);
-  
-        if (item === 'acid') status.textContent = 'Asam dituangkan ke beaker!';
-        if (item === 'base') status.textContent = 'Basa dituangkan ke beaker!';
-        
-        evaluateReaction();
-      });
-  
-      resetBtn?.addEventListener('click', () => {
-        contents.clear();
-        const img = beaker.querySelector('img');
-        if (img) img.src = 'assets/img/beaker.png';
-        status.textContent = 'Tarik bahan ke beaker…';
-      });
-  
-      function evaluateReaction() {
-        const img = beaker.querySelector('img');
-        if (contents.has('acid') && contents.has('base')) {
-          status.textContent = 'Reaksi Netralisasi terjadi 🔬';
-          if (img) img.src = 'assets/img/beaker-reaction.png';
-        } else if (contents.has('acid')) {
-          status.textContent = 'Larutan bersifat asam (belum dinetralkan).';
-          if (img) img.src = 'assets/img/beaker.png';
-        } else if (contents.has('base')) {
-          status.textContent = 'Larutan bersifat basa (belum dinetralkan).';
-          if (img) img.src = 'assets/img/beaker.png';
-        }
-      }
-    }
 
+
+
+  // screen next
+  document.getElementById('infoNext') && document.getElementById('infoNext').addEventListener('click', ()=> goTo(37));
+  document.getElementById('infoNext_37') && document.getElementById('infoNext_37').addEventListener('click', ()=> goTo(38));
+   document.getElementById('infoNext_38') && document.getElementById('infoNext_38').addEventListener('click', ()=> goTo(39));
+    document.getElementById('infoNext_39') && document.getElementById('infoNext_39').addEventListener('click', ()=> goTo(40));
+    document.getElementById('infoNext_40') && document.getElementById('infoNext_40').addEventListener('click', ()=> goTo(41));
+    document.getElementById('infoNext_41') && document.getElementById('infoNext_41').addEventListener('click', ()=> goTo(42));
+    document.getElementById('btnMath') && document.getElementById('btnMath').addEventListener('click', ()=> goTo(43));
+    document.getElementById('infoNext_43') && document.getElementById('infoNext_43').addEventListener('click', ()=> goTo(44));
+    document.getElementById('descNext7') && document.getElementById('descNext7').addEventListener('click', ()=> goTo(45));
+     document.getElementById('infoNext_45') && document.getElementById('infoNext_45').addEventListener('click', ()=> goTo(46));
+
+
+    // screen comeback nanti saja
 
   // Klik bubble menu (Page 3)
   document.querySelectorAll('.orbit .bubble').forEach(b=>{
@@ -252,7 +220,7 @@
       if (act === 'deskripsi')    return goTo(7);
       if (act === 'materi')       return goTo(9);
       if (act === 'evaluasi')     return goTo(27);
-      if (act === 'virtuallab')   return goTo(36);
+      if (act === 'virtuallab')   return goTo(36); // Info Screen
       alert('Menu: ' + act);
     });
   });
