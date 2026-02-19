@@ -670,58 +670,112 @@
   </main>
 </section>
 
-<!-- ========================== PAGE 27 ========================== -->
+
 <section id="screen27" class="screen" aria-label="Halaman 27: Evaluasi (Pembuka)">
   <main class="stage">
-    <div class="bg"></div>
+    <!-- Set background image -->
+    <div class="bg" style="background-image: url('assets/board-kuning.png');"></div>
+    
 
-    <!-- tombol -->
+    <!-- Buttons -->
     <button class="home-btn" id="evalHome0" aria-label="Kembali ke Menu">
-      <img src="assets/btn-home.png" alt="">
+      <img src="assets/btn-home.png" alt="Home Button">
     </button>
     <button class="nav-btn nav-next" id="evalStart" aria-label="Mulai Evaluasi">
-      <img src="assets/btn-next.png" alt="">
+      <img src="assets/btn-next.png" alt="Next Button">
     </button>
 
-    <!-- hero layout -->
+    <!-- Hero layout -->
     <div class="eval-hero-wrap">
-      <!-- karakter di belakang meja -->
-      <img class="eval-char" src="assets/mascot-kid2.png" alt="Maskot">
+      <!-- Character image -->
+      <img class="eval-char" src="/mnt/data/86486f4b-8fb2-4480-aaf3-9a5f03a30d11.png" alt="Character Image">
 
-      <!-- meja laboratorium digeser ke kiri -->
-      <img class="eval-desk" src="assets/desk-lab.png" alt="Meja lab">
+      <!-- Centered Box -->
+      <div class="centered-box" style="display: flex; justify-content: center; align-items: center; width: 80%; height: 400px; background-color: white; margin: 120px auto; border: 5px solid #000; text-align: center;">
+    <h2 class="intro-title" style="font-size: 3rem;">REFLEKSI</h2>
+</div>
 
-      <!-- panel kecil di dinding + tulisan -->
-      <div class="eval-wall-panel">
-        <div class="eval-text">EVALUASI</div>
-      </div>
+
     </div>
   </main>
 </section>
 
-<!-- ========================== PAGE 28 ========================== -->
+
+
 <section id="screen28" class="screen intro-wrap" aria-label="Halaman 28: evaluasi">
   <main class="stage">
-    <div class="bg"></div>
+    <!-- Set background image -->
+    <div class="bg" style="background-image: url('assets/board-kuning.png');"></div>
 
     <img class="board" src="assets/board.png" alt="">
-    <button class="home-btn" id="evalHome1" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
 
-    <button class="nav-btn nav-prev" id="eval28Prev" aria-label="Kembali ke evaluasi 2"><img src="assets/btn-prev.png" alt=""></button>
-    <button class="nav-btn nav-next" id="eval28Next" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+    <!-- Navigation Buttons -->
+    <button class="home-btn" id="evalHome1" aria-label="Kembali ke Menu">
+      <img src="assets/btn-home.png" alt="Home Button">
+    </button>
+    <button class="nav-btn nav-prev" id="eval28Prev" aria-label="Kembali ke evaluasi 2">
+      <img src="assets/btn-prev.png" alt="Previous Button">
+    </button>
+    <button class="nav-btn nav-next" id="eval28Next" aria-label="Lanjut ke evaluasi 2">
+      <img src="assets/btn-next.png" alt="Next Button">
+    </button>
 
+    <!-- Main Content -->
     <div class="intro-area">
       <div class="intro-body">
-        <p>
-          Fenomena obesitas pada remaja menjadi isu kesehatan yang meresahkan di seluruh dunia, termasuk di Indonesia. Salah satu faktor utama yang sering disoroti adalah pola makan yang tidak seimbang, khususnya konsumsi gula berlebih dan asupan karbohidrat olahan yang tinggi. Banyak cemilan modern yang mengklaim sehat atau rendah gula, namun kenyataannya mungkin berbanding terbalik.
-        </p>
-        <p>
-          Di sebuah sekolah menengah, data terbaru menunjukkan peningkatan signifikan pada indeks massa tubuh (IMT) sebagian besar siswanya. Guru Biologi, Bu Amara, berinisiatif untuk mengajak siswanya menjadi.
-        </p>
+        <!-- Emoticons and Checkboxes in a brown box -->
+        <div style="background-color: #8B4513; padding: 20px; border-radius: 10px;">
+          <div style="display: flex; justify-content: space-around; font-size: 1.5rem; align-items: center;">
+            <label>
+              <input type="checkbox" name="mood" value="senang">
+              <span>😊</span> Senang
+            </label>
+            <label>
+              <input type="checkbox" name="mood" value="biasa_saja">
+              <span>😐</span> Biasa saja
+            </label>
+            <label>
+              <input type="checkbox" name="mood" value="sedih">
+              <span>😢</span> Sedih
+            </label>
+            <label>
+              <input type="checkbox" name="mood" value="lelah">
+              <span>😔</span> Lelah
+            </label>
+          </div>
+        </div>
+
+        <!-- Description as OL/LI with dotted lines and numbering -->
+        <ol style="padding-left: 20px; font-size: 1.2rem; margin-top: 20px;">
+          <li style="position: relative; padding-right: 20px;">
+            Hal baru apa yang kamu pelajari dari aktivitas virtual lab ini?
+            <span style="position: absolute; bottom: 0; left: 0; width: 100%; border-bottom: 2px dotted #000;"></span>
+          </li>
+          <li style="position: relative; padding-right: 20px;">
+            Bagian mana dari kegiatan virtual lab yang menurutmu paling menarik?
+            <span style="position: absolute; bottom: 0; left: 0; width: 100%; border-bottom: 2px dotted #000;"></span>
+          </li>
+          <li style="position: relative; padding-right: 20px;">
+            Apa kesulitan yang kamu alami saat menggunakan virtual lab?
+            <span style="position: absolute; bottom: 0; left: 0; width: 100%; border-bottom: 2px dotted #000;"></span>
+          </li>
+          <li style="position: relative; padding-right: 20px;">
+            Bagaimana cara kamu mengatasi kesulitan tersebut?
+            <span style="position: absolute; bottom: 0; left: 0; width: 100%; border-bottom: 2px dotted #000;"></span>
+          </li>
+        </ol>
+
+        <!-- Image Added -->
+        <img src="/mnt/data/0c2e38d0-daac-4a9f-8b1d-7ca9cb7fd037.png" alt="New Image" style="max-width: 100%; height: auto; margin-top: 20px;">
       </div>
     </div>
   </main>
 </section>
+
+
+
+
+
 
 <!-- ========================== PAGE 29 ========================== -->
 <section id="screen29" class="screen intro-wrap" aria-label="Halaman 29: evaluasi">

@@ -192,6 +192,8 @@
   document.getElementById('labHome_44') && document.getElementById('labHome_44').addEventListener('click', ()=> goTo(3));
   document.getElementById('labHome_45') && document.getElementById('labHome_45').addEventListener('click', ()=> goTo(3));
   document.getElementById('labHome_46') && document.getElementById('labHome_46').addEventListener('click', ()=> goTo(3));
+  document.getElementById('evalHome8') && document.getElementById('evalHome8').addEventListener('click', ()=> goTo(3));
+  
 
 
 
@@ -220,7 +222,8 @@
       if (act === 'deskripsi')    return goTo(7);
       if (act === 'materi')       return goTo(9);
       if (act === 'evaluasi')     return goTo(27);
-      if (act === 'virtuallab')   return goTo(36); // Info Screen
+      if (act === 'virtuallab')   return goTo(36); 
+      if (act === 'biodata')      return goTo(2);// Info Screen
       alert('Menu: ' + act);
     });
   });
