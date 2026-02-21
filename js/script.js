@@ -46,6 +46,17 @@
     44: document.getElementById('screen44'),
     45: document.getElementById('screen45'),
     46: document.getElementById('screen46'),
+    47: document.getElementById('screen47'),
+    48: document.getElementById('screen48'),
+    49: document.getElementById('screen49'),
+    50: document.getElementById('screen50'),
+    51: document.getElementById('screen51'),
+    52: document.getElementById('screen52'),
+    53: document.getElementById('screen53'),
+    54: document.getElementById('screen54'),
+    55: document.getElementById('screen55'),
+    56: document.getElementById('screen56'),
+
 
   };
   function goTo(n){
@@ -160,10 +171,7 @@
   document.getElementById('evalHome7').addEventListener('click', ()=> goTo(3));
 
   document.getElementById('eval28Prev').addEventListener('click', ()=> goTo(27));
-  document.getElementById('eval28Next').addEventListener('click', ()=> goTo(29));
 
-  document.getElementById('eval29Prev').addEventListener('click', ()=> goTo(28));
-  document.getElementById('eval29Next').addEventListener('click', ()=> goTo(30));
 
   document.getElementById('eval30Prev').addEventListener('click', ()=> goTo(29));
   document.getElementById('eval30Next').addEventListener('click', ()=> goTo(31));
@@ -193,6 +201,17 @@
   document.getElementById('labHome_45') && document.getElementById('labHome_45').addEventListener('click', ()=> goTo(3));
   document.getElementById('labHome_46') && document.getElementById('labHome_46').addEventListener('click', ()=> goTo(3));
   document.getElementById('evalHome8') && document.getElementById('evalHome8').addEventListener('click', ()=> goTo(3));
+  document.getElementById('labHome_47') && document.getElementById('labHome_47').addEventListener('click', ()=> goTo(3));
+    document.getElementById('labHome_48') && document.getElementById('labHome_48').addEventListener('click', ()=> goTo(3));
+      document.getElementById('labHome_49') && document.getElementById('labHome_49').addEventListener('click', ()=> goTo(3));
+        document.getElementById('labHome_50') && document.getElementById('labHome_50').addEventListener('click', ()=> goTo(3));
+          document.getElementById('labHome_51') && document.getElementById('labHome_51').addEventListener('click', ()=> goTo(3));
+            document.getElementById('labHome_52') && document.getElementById('labHome_52').addEventListener('click', ()=> goTo(3));
+              document.getElementById('labHome_53') && document.getElementById('labHome_53').addEventListener('click', ()=> goTo(3));
+                document.getElementById('labHome_54') && document.getElementById('labHome_54').addEventListener('click', ()=> goTo(3));
+                 document.getElementById('labHome_55') && document.getElementById('labHome_55').addEventListener('click', ()=> goTo(3));
+                  document.getElementById('labHome_56') && document.getElementById('labHome_56').addEventListener('click', ()=> goTo(3));
+
   
 
 
@@ -209,6 +228,24 @@
     document.getElementById('infoNext_43') && document.getElementById('infoNext_43').addEventListener('click', ()=> goTo(44));
     document.getElementById('descNext7') && document.getElementById('descNext7').addEventListener('click', ()=> goTo(45));
      document.getElementById('infoNext_45') && document.getElementById('infoNext_45').addEventListener('click', ()=> goTo(46));
+     document.getElementById('eval35Next') && document.getElementById('eval35Next').addEventListener('click', ()=> goTo(47));
+     document.getElementById('btnScience') && document.getElementById('btnScience').addEventListener('click', ()=> goTo(29));
+  document.getElementById('goKegiatan1') && document.getElementById('goKegiatan1').addEventListener('click', ()=> goTo(30));
+  document.getElementById('goKegiatan2') && document.getElementById('goKegiatan2').addEventListener('click', ()=> goTo(49));
+  document.getElementById('goKegiatan3') && document.getElementById('goKegiatan3').addEventListener('click', ()=> goTo(35));
+  document.getElementById('infoNext_47') && document.getElementById('infoNext_47').addEventListener('click', ()=> goTo(48));
+  document.getElementById('infoNext_48') && document.getElementById('infoNext_48').addEventListener('click', ()=> goTo(49));
+  document.getElementById('infoNext_49') && document.getElementById('infoNext_49').addEventListener('click', ()=> goTo(50));
+  document.getElementById('infoNext_50') && document.getElementById('infoNext_50').addEventListener('click', ()=> goTo(51));
+  document.getElementById('infoNext_51') && document.getElementById('infoNext_51').addEventListener('click', ()=> goTo(52));
+  document.getElementById('btnTechno') && document.getElementById('btnTechno').addEventListener('click', ()=> goTo(53));
+  document.getElementById('infoNext_53') && document.getElementById('infoNext_53').addEventListener('click', ()=> goTo(54));
+  document.getElementById('btnEngineer') && document.getElementById('btnEngineer').addEventListener('click', ()=> goTo(55));
+  document.getElementById('infoNext_55') && document.getElementById('infoNext_55').addEventListener('click', ()=> goTo(56));  
+  document.getElementById('infoNext_56') && document.getElementById('infoNext_56').addEventListener('click', ()=> goTo(57));  
+
+
+  
 
 
     // screen comeback nanti saja
@@ -223,7 +260,7 @@
       if (act === 'materi')       return goTo(9);
       if (act === 'evaluasi')     return goTo(27);
       if (act === 'virtuallab')   return goTo(36); 
-      if (act === 'biodata')      return goTo(2);// Info Screen
+      if (act === 'biodata')      return goTo(2);
       alert('Menu: ' + act);
     });
   });
@@ -272,6 +309,6 @@
     const last = Number(localStorage.getItem('currentScreen')||1);
     // if (last===3 && !localStorage.getItem('profilSiswa')) { goTo(2); return; }
     // izinkan semua halaman yang tersedia (termasuk 36)
-    const allowed = new Set([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]);
+    const allowed = new Set([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]);
     goTo(allowed.has(last)? last : 1);
   })();
