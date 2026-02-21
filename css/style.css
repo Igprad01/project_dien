@@ -119,7 +119,16 @@ body{
 }
 .desk-top{ position:absolute; left:50%; transform:translateX(-50%); bottom:var(--counter-bottom); width:min(78%,920px); z-index:3; pointer-events:none; }
 .desk-front{ position:absolute; left:50%; transform:translateX(-50%); bottom:0; width:min(92%,1000px); z-index:6; pointer-events:none; opacity:.96; }
-.mascot{ position:absolute; left:50%; transform:translateX(-50%); bottom:19%; width:clamp(220px,28vw,420px); z-index:4; pointer-events:none; filter:drop-shadow(0 14px 30px rgba(0,0,0,.16)); }
+.mascot{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8%; /* sebelumnya 19%, jadi terlalu naik */
+  width: clamp(420px, 52vw, 820px); /* dibesarkan */
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 14px 30px rgba(0,0,0,.16));
+}
 .orbit.semi{
   --r: var(--orbit-radius);
   --arc-start: 160deg; --arc-end: 380deg; --n: 7;
