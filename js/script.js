@@ -260,6 +260,12 @@
                             document.getElementById('labPrev_52') && document.getElementById('labPrev_52').addEventListener('click', ()=> goTo(51));
                             document.getElementById('eval35Prev') && document.getElementById('eval35Prev').addEventListener('click', ()=> goTo(29));
                              document.getElementById('labPrev_49') && document.getElementById('labPrev_49').addEventListener('click', ()=> goTo(29));
+                              document.getElementById('labPrev_53') && document.getElementById('labPrev_53').addEventListener('click', ()=> goTo(42));
+                              document.getElementById('labPrev_54') && document.getElementById('labPrev_54').addEventListener('click', ()=> goTo(53));
+                              document.getElementById('labPrev_55') && document.getElementById('labPrev_55').addEventListener('click', ()=> goTo(42));
+                              document.getElementById('labPrev_56').addEventListener('click', ()=> goTo(55));
+
+
 
 
 
