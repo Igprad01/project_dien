@@ -183,7 +183,6 @@
   document.getElementById('eval32Next').addEventListener('click', ()=> goTo(33));
 
   document.getElementById('eval33Prev').addEventListener('click', ()=> goTo(32)); 
-  document.getElementById('eval33Next').addEventListener('click', ()=> goTo(34));
 
   document.getElementById('eval34Prev').addEventListener('click', ()=> goTo(33));
   document.getElementById('eval34Next').addEventListener('click', ()=> goTo(35));
@@ -242,13 +241,32 @@
   document.getElementById('infoNext_53') && document.getElementById('infoNext_53').addEventListener('click', ()=> goTo(54));
   document.getElementById('btnEngineer') && document.getElementById('btnEngineer').addEventListener('click', ()=> goTo(55));
   document.getElementById('infoNext_55') && document.getElementById('infoNext_55').addEventListener('click', ()=> goTo(56));  
-  document.getElementById('infoNext_56') && document.getElementById('infoNext_56').addEventListener('click', ()=> goTo(57));  
+  document.getElementById('infoNext_56') && document.getElementById('infoNext_56').addEventListener('click', ()=> goTo(57));
+   document.getElementById('labBack_45') && document.getElementById('labBack_45').addEventListener('click', ()=> goTo(8));
+   document.getElementById('labBack_46') && document.getElementById('labBack_46').addEventListener('click', ()=> goTo(45));
+    document.getElementById('labBack_37') && document.getElementById('labBack_37').addEventListener('click', ()=> goTo(36));
+    document.getElementById('labBack_38') && document.getElementById('labBack_38').addEventListener('click', ()=> goTo(37));
+      document.getElementById('labBack_39') && document.getElementById('labBack_39').addEventListener('click', ()=> goTo(38));
+        document.getElementById('labBack_40') && document.getElementById('labBack_40').addEventListener('click', ()=> goTo(39));
+          document.getElementById('labBack_41') && document.getElementById('labBack_41').addEventListener('click', ()=> goTo(40));
+            document.getElementById('labBack_42') && document.getElementById('labBack_42').addEventListener('click', ()=> goTo(41));
+              document.getElementById('labBack_43') && document.getElementById('labBack_43').addEventListener('click', ()=> goTo(42));
+                document.getElementById('labBack_44') && document.getElementById('labBack_44').addEventListener('click', ()=> goTo(43));
+                  document.getElementById('labPrev_47') && document.getElementById('labPrev_47').addEventListener('click', ()=> goTo(35));
+                    document.getElementById('labPrev_48') && document.getElementById('labPrev_48').addEventListener('click', ()=> goTo(47));
+                      document.getElementById('labPrev_49') && document.getElementById('labPrev_49').addEventListener('click', ()=> goTo(48));
+                        document.getElementById('labPrev_50') && document.getElementById('labPrev_50').addEventListener('click', ()=> goTo(49));
+                          document.getElementById('labPrev_51') && document.getElementById('labPrev_51').addEventListener('click', ()=> goTo(50));
+                            document.getElementById('labPrev_52') && document.getElementById('labPrev_52').addEventListener('click', ()=> goTo(51));
+                            document.getElementById('eval35Prev') && document.getElementById('eval35Prev').addEventListener('click', ()=> goTo(29));
+                             document.getElementById('labPrev_49') && document.getElementById('labPrev_49').addEventListener('click', ()=> goTo(29));
+
+
+
 
 
   
 
-
-    // screen comeback nanti saja
 
   // Klik bubble menu (Page 3)
   document.querySelectorAll('.orbit .bubble').forEach(b=>{
