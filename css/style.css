@@ -408,3 +408,11 @@ body{
     height: auto;
     margin: 5px;
   }
+
+.bg-58 {
+  position:absolute; 
+  inset:0; 
+  /* use relative path and forward slashes for web */
+  background: url("../assets/ITEM VLAB/2.png") center/cover no-repeat;
+  z-index:0;
+}
