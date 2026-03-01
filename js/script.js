@@ -58,6 +58,7 @@ const screens = {
   56: document.getElementById("screen56"),
   57: document.getElementById("screen57"),
   58: document.getElementById("screen58"),
+  59: document.getElementById("screen59"),
 };
 function goTo(n) {
   Object.values(screens).forEach((s) => s && s.classList.remove("active"));
@@ -276,6 +277,12 @@ document.getElementById("labHome_56") &&
   document
     .getElementById("labHome_57")
     .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labHome_58")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labHome_59")
+    .addEventListener("click", () => goTo(3));
 
 // screen next
 document.getElementById("infoNext") &&
@@ -472,6 +479,12 @@ document.getElementById("labPrev_57") &&
     document
     .getElementById("labPrev_58")
     .addEventListener("click", () => goTo(57));
+    document
+    .getElementById("labNext_58")
+    .addEventListener("click", () => goTo(59));
+    document
+    .getElementById("labPrev_59")
+    .addEventListener("click", () => goTo(58));
 
 // Klik bubble menu (Page 3)
 document.querySelectorAll(".orbit .bubble").forEach((b) => {
