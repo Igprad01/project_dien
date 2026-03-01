@@ -345,3 +345,66 @@ body{
   .t-stem{ -webkit-text-stroke:7px #fff }
   .t-berbasis,.t-materi{ -webkit-text-stroke:4px #fff }
 }
+
+/* ===== Flex Container (Left, Center, Right) ===== */
+.flex {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  gap: 20px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  align-items: stretch !important;
+}
+
+.flex-left {
+  flex: 1 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: auto !important;
+}
+
+.flex-center {
+  flex: 1 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: auto !important;
+}
+
+.flex-right {
+  flex: 1 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: auto !important;
+  
+
+.lab-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.shelf-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+.item {
+    width: 60px;
+    height: auto;
+    margin: 5px;
+  }

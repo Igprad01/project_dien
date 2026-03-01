@@ -814,7 +814,7 @@
 <!-- Papan tengah -->
 <div style="position:absolute; left:50%; transform:translateX(-50%); bottom:5%;">
   <img id="goKegiatan3"
-       src="assets/svgviewer-png-output.png"
+       src="assets/kegiatan3.png"
        alt="Kegiatan 3"
        style="width:30%; cursor:pointer;">
 </div>
@@ -1735,6 +1735,211 @@ Silakan amati video berikut yang mendemonstrasikan cara merangkai sensor pH deng
         </figure>
       </div>
     </div>
+  </main>
+</section>
+
+<section id="screen57" class="screen intro-wrap" aria-label="Halaman 35: evaluasi (unggah jawaban)">
+  <main class="stage">
+    <div class="bg"></div>
+    <img class="board" src="assets/lab-laboran.png" alt="">
+
+
+    <button class="home-btn" id="labHome_57" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+    <button class="nav-btn nav-prev" id="labPrev_57" aria-label="Kembali ke pertanyaan"><img src="assets/btn-prev.png" alt=""></button>
+
+     <button class="nav-btn nav-next" id="labNext_57" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+    <div class="intro-area" id="mainContainer" style="top: 5%; height: 90%; position: absolute; width: 100%; margin-top: 14rem; margin-left: 2rem; overflow: hidden;">
+       <div style="justify-items:left; display: flex; flex-direction: column; height: 100%; position: relative;">
+          <!-- RAK 1 -->
+          <div style="display: flex; justify-content: flex-start; width: 100%; margin-bottom: 1rem; margin-left: 29px;">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Rice" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/6.png" alt="Milk" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/5.png" alt="Bread" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/3.png" alt="Bananas" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+</div>
+
+ <!-- RAK 2 -->
+ <div style="display: flex; justify-content: flex-start; width: 100%; margin-bottom: 1rem; margin-left: 29px;">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Reagent 1" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Reagent 2" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Reagent 3" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Reagent 4" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+</div>
+
+<!-- RAK 3 -->
+<div style="display: flex; justify-content: flex-start; width: 100%; margin-bottom: 1rem; margin-left: 29px;">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Tool 1" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Tool 2" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Tool 3" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Tool 4" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+</div>
+
+<!-- RAK 4 -->
+<div style="display: flex; justify-content: flex-start; width: 100%; margin-bottom: 1rem; margin-left: 29px;">
+   <img src="assets/ALAT DAN BAHAN/7.png" alt="Measure 1" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Measure 2" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Measure 3" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+  <img src="assets/ALAT DAN BAHAN/7.png" alt="Measure 4" style="width: 80px; cursor: grab;" draggable="true" class="draggable-item">
+</div>
+
+<!-- AREA MEJA KERJA - bisa taruh di mana saja di sini -->
+<div id="dropArea" style="position: absolute; top: 200px; left: 0; right: 0; bottom: 0; pointer-events: none;">
+</div>
+
+      </div>
+    </div>
+
+
+
+    
+<!-- SCRIPT UNTUK DRAG AND DROP (CUT MODE) -->
+<script>
+const mainContainer = document.getElementById('mainContainer');
+const dropArea = document.getElementById('dropArea');
+let draggedElement = null;
+let isDraggingFromRak = false;
+let offsetX = 0;
+let offsetY = 0;
+
+// Setup drag untuk semua item di rak
+function setupDraggableItems() {
+  const draggableItems = document.querySelectorAll('.draggable-item');
+  
+  draggableItems.forEach(item => {
+    item.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      draggedElement = this;
+      isDraggingFromRak = true;
+      
+      offsetX = e.clientX;
+      offsetY = e.clientY;
+      
+      this.style.opacity = '0.5';
+      this.style.position = 'relative';
+      this.style.zIndex = '1000';
+      
+      // Highlight container
+      mainContainer.style.backgroundColor = 'rgba(100,200,255,0.1)';
+      
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    });
+  });
+}
+
+function handleMouseMove(e) {
+  if (!draggedElement) return;
+}
+
+function handleMouseUp(e) {
+  if (!draggedElement) return;
+  
+  const dropAreaRect = dropArea.getBoundingClientRect();
+  
+  // Hitung posisi di dalam dropArea
+  const x = e.clientX - dropAreaRect.left;
+  const y = e.clientY - dropAreaRect.top;
+  
+  // Cek apakah item dilepas dalam area meja (dropArea)
+  if (e.clientY >= dropAreaRect.top && 
+      e.clientY <= dropAreaRect.bottom &&
+      e.clientX >= dropAreaRect.left && 
+      e.clientX <= dropAreaRect.right) {
+    
+    if (isDraggingFromRak) {
+      // PINDAHKAN (CUT) gambar asli dari rak ke dropArea
+      const itemWrapper = document.createElement('div');
+      itemWrapper.className = 'placed-item';
+      itemWrapper.style.cssText = `
+        position: absolute;
+        left: ${Math.max(0, x)}px;
+        top: ${Math.max(0, y)}px;
+        cursor: move;
+        pointer-events: auto;
+        z-index: 1;
+      `;
+      
+      // Pindahkan gambar asli (tidak clone)
+      draggedElement.style.cssText = `
+        width: 70px;
+        cursor: move;
+        user-select: none;
+        display: block;
+        margin: 0;
+      `;
+      draggedElement.draggable = false;
+      draggedElement.classList.remove('draggable-item');
+      
+      itemWrapper.appendChild(draggedElement);
+      
+      // Buat item bisa dipindah lagi
+      makeMovable(itemWrapper, dropArea);
+      
+      dropArea.appendChild(itemWrapper);
+    }
+  }
+  
+  // Reset style
+  if (draggedElement && draggedElement.parentNode) {
+    draggedElement.style.opacity = '1';
+    draggedElement.style.zIndex = 'auto';
+  }
+  mainContainer.style.backgroundColor = 'transparent';
+  
+  draggedElement = null;
+  isDraggingFromRak = false;
+  document.removeEventListener('mousemove', handleMouseMove);
+  document.removeEventListener('mouseup', handleMouseUp);
+}
+
+// Fungsi untuk membuat item di container bisa dipindah
+function makeMovable(element, container) {
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let startLeft = 0;
+  let startTop = 0;
+  
+  element.addEventListener('mousedown', function(e) {
+    e.preventDefault();
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = parseInt(this.style.left) || 0;
+    startTop = parseInt(this.style.top) || 0;
+    
+    this.style.opacity = '0.7';
+    this.style.zIndex = '1000';
+    
+    document.addEventListener('mousemove', moveItem);
+    document.addEventListener('mouseup', stopMoving);
+  });
+  
+  function moveItem(e) {
+    if (!isDragging) return;
+    
+    const deltaX = e.clientX - startX;
+    const deltaY = e.clientY - startY;
+    
+    let newLeft = startLeft + deltaX;
+    let newTop = startTop + deltaY;
+    
+    element.style.left = newLeft + 'px';
+    element.style.top = newTop + 'px';
+  }
+  
+  function stopMoving() {
+    isDragging = false;
+    element.style.opacity = '1';
+    element.style.zIndex = '1';
+    document.removeEventListener('mousemove', moveItem);
+    document.removeEventListener('mouseup', stopMoving);
+  }
+}
+
+// Initialize draggable items saat halaman load
+setupDraggableItems();
+</script>
   </main>
 </section>
 
