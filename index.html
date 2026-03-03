@@ -2017,7 +2017,7 @@ setupDraggableItems();
     
      <button class="nav-btn nav-next" id="labNext_59" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
     <div class="intro-area mainContainer" style="top: 5%; height: 90%; position: absolute; width: 100%; margin-top: 30rem; margin-left: 2rem; overflow: hidden;">
-       <div style="display: flex; flex-direction: column; height: 100%; position: relative; width: 100%;">
+       <div style="display: flex; flex-direction: column; height: 100%; position: relative; width: 120%;">
           <!-- RAK (shelf at top) -->
           <div style="display: flex; justify-content: flex-start; align-items: flex-start; width: 100%; padding: 10px 0 0 29px; flex-shrink: 0;">
             <img src="assets/ALAT DAN BAHAN/14.png" id="gambar-1" alt="Reagent 1" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
@@ -2043,33 +2043,83 @@ setupDraggableItems();
     <div class="bg"></div>
     <img class="board" src="assets\ITEM VLAB\3.png" alt="">
 
-
-
     <button class="home-btn" id="labHome_60" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
     <button class="nav-btn nav-prev" id="labPrev_60" aria-label="Kembali ke pertanyaan"><img src="assets/btn-prev.png" alt=""></button>
     
-     <button class="nav-btn nav-next" id="labNext_60" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+    <button class="nav-btn nav-next" id="labNext_60" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
     <div class="intro-area mainContainer" style="top: 5%; height: 90%; position: absolute; width: 100%; margin-top: 30rem; margin-left: 2rem; overflow: hidden;">
        <div style="display: flex; flex-direction: column; height: 100%; position: relative; width: 100%;">
           <!-- RAK (shelf at top) -->
-          <div style="display: flex; justify-content: flex-start; align-items: flex-start; width: 100%; padding: 10px 0 0 29px; flex-shrink: 0;">
-            <img src="assets/ALAT DAN BAHAN/14.png"  alt="Reagent 1" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
-            <img src="assets/ALAT DAN BAHAN/10.png" alt="Reagent 2" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
-            <img src="assets/ALAT DAN BAHAN/2.png" alt="Reagent 3" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
-            <img src="assets/ALAT DAN BAHAN/2.png" alt="Reagent 4" style="width: 80px; height: auto; cursor: grab;" draggable="true" class="draggable-item">
-             <img src="assets/ALAT DAN BAHAN/2.png" alt="Reagent 1" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
-            <img src="assets/ALAT DAN BAHAN/3.png" alt="Reagent 2" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
-            <img src="assets/ALAT DAN BAHAN/7.png" alt="Reagent 3" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
-            <img src="assets/ALAT DAN BAHAN/6.png" alt="Reagent 4" style="width: 80px; height: auto; cursor: grab;" draggable="true" class="draggable-item">
-             <img src="assets/ALAT DAN BAHAN/5.png" alt="Reagent 1" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
-            <img src="assets/ALAT DAN BAHAN/12.png" alt="Reagent 2" style="width: 80px; height: auto; cursor: grab; margin-right: 15px;" draggable="true" class="draggable-item">
+          <div style="display: flex; flex-wrap: wrap; justify-content: flex-start; align-items: flex-start; padding: 10px 0 0 29px;">
+            <!-- Gambar utama yang lebih besar, ditempatkan di baris pertama -->
+            <div class="top-row" style="display: flex; gap: 10px; margin-bottom: 20px;">
+              <img src="assets/UJI BIURET/Frame 1.png" alt="Reagent 3" style="width: 250px; cursor: grab; margin-right: 5rem; padding-right: 150px;" draggable="true" class="draggable-item" id="mainImage">
+            </div>
+
+            <!-- Gambar lainnya, disusun dalam baris yang berbeda -->
+            <div class="bottom-row" style="display: flex; gap: 15px; flex-wrap: wrap;">
+              <img src="assets/ALAT DAN BAHAN/7.png" id="Id60-gambar1" alt="Reagent 3" style="width: 120px; height: auto; cursor: grab;" draggable="true" class="draggable-item">
+              <img src="assets/ALAT DAN BAHAN/6.png" id="id60-gambar2" alt="Reagent 4" style="width: 120px; height: auto; cursor: grab;" draggable="true" class="draggable-item">
+              <img src="assets/ALAT DAN BAHAN/5.png" id="id60-gambar3" alt="Reagent 1" style="width: 120px; height: auto; cursor: grab;" draggable="true" class="draggable-item">
+              <img src="assets/ALAT DAN BAHAN/12.png" id="id60-gambar4" alt="Reagent 2" style="width: 120px; height: auto; cursor: grab;" draggable="true" class="draggable-item" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+               <img src="assets/ALAT DAN BAHAN/10.png" id="id60-gambar5" alt="Reagent 5" style="width: 120px; height: auto; cursor: grab;" draggable="true" class="draggable-item" ondragstart="dragStart(event)" ondragend="dragEnd(event)">
+            </div>
           </div>
           <!-- AREA MEJA KERJA (working desk) -->
-          <div class="dropArea" style="flex: 1; position: relative; top: 30px; left: 0; right: 0; bottom: 0; pointer-events: none;"></div>
+          <div class="dropArea" style="flex: 1; position: relative; top: 30px; left: 0; right: 0; bottom: 0; pointer-events: none;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
       </div>
     </div>
-      </main>
+  </main>
 </section>
+
+<script>
+  // Membuat variabel yang berisi gambar pengganti untuk setiap gambar
+  const newImagePaths = {
+      "Id60-gambar1": "assets/UJI BIURET/Frame 3.png", 
+      "id60-gambar2": "assets/UJI BIURET/Frame 4.png", 
+      "id60-gambar3": "assets/UJI BIURET/Frame 2.png", 
+  };
+
+  // Menambahkan event listener untuk klik pada gambar
+  document.querySelectorAll('.draggable-item').forEach(image => {
+      image.addEventListener('click', function() {
+          const newPath = newImagePaths[image.id]; 
+          if (newPath) {
+              image.src = newPath; 
+          }
+      });
+  });
+
+    // Menambahkan event listener untuk gambar agar dapat digerakkan
+  function allowDrop(ev) {
+    ev.preventDefault(); // Mencegah perilaku default untuk area drop
+  }
+
+  function dragStart(ev) {
+    ev.dataTransfer.setData("text", ev.target.id); // Menyimpan ID gambar yang sedang di-drag
+  }
+
+  function dragEnd(ev) {
+    ev.target.style.transform = 'scale(1)'; // Mengembalikan gambar ke ukuran semula setelah drag selesai
+  }
+
+  function drop(ev) {
+    ev.preventDefault(); // Mencegah perilaku default browser
+
+    const data = ev.dataTransfer.getData("text"); // Mendapatkan ID gambar yang sedang dipindahkan
+    const draggedElement = document.getElementById(data); // Menangkap elemen gambar yang sedang dipindahkan
+    const droppedElement = ev.target; // Menangkap elemen gambar yang disentuh (dijatuhkan)
+
+    // Memastikan gambar yang dijatuhkan adalah gambar lain dan bukan area kosong
+    if (droppedElement.tagName.toLowerCase() === 'img' && draggedElement !== droppedElement) {
+        const tempSrc = draggedElement.src;
+        draggedElement.src = droppedElement.src;
+        droppedElement.src = tempSrc;
+    }
+  }
+</script>
+
+
 <script src="js/script.js"></script>
 </body>
 </html>

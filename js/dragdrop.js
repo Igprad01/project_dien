@@ -16,6 +16,7 @@ function setupDraggableItems() {
       draggedElement = this;
       isDraggingFromRak = true;
       
+      // record initial mouse position for delta calculations
       offsetX = e.clientX;
       offsetY = e.clientY;
 
@@ -23,11 +24,17 @@ function setupDraggableItems() {
       currentContainer = this.closest('.mainContainer');
       currentDropArea = currentContainer ? currentContainer.querySelector('.dropArea') : null;
       
+      // prepare element for free movement
       this.style.opacity = '0.5';
-      this.style.position = 'relative';
       this.style.zIndex = '1000';
+      this.style.position = 'absolute';
+      // place it at the current mouse location so it can follow
+      const rect = this.getBoundingClientRect();
+      this.style.left = rect.left + 'px';
+      this.style.top = rect.top + 'px';
+      document.body.appendChild(this); // move to body so it can roam freely
       
-      // Highlight container
+      // Highlight container (original rack) if any
       if (currentContainer) {
         currentContainer.style.backgroundColor = 'rgba(100,200,255,0.1)';
       }
@@ -40,6 +47,21 @@ function setupDraggableItems() {
 
 function handleMouseMove(e) {
   if (!draggedElement) return;
+
+  // calculate how far the mouse has moved since last event
+  const dx = e.clientX - offsetX;
+  const dy = e.clientY - offsetY;
+
+  // update offsets for next move
+  offsetX = e.clientX;
+  offsetY = e.clientY;
+
+  // adjust the element's position
+  const currLeft = parseFloat(draggedElement.style.left) || 0;
+  const currTop = parseFloat(draggedElement.style.top) || 0;
+
+  draggedElement.style.left = currLeft + dx + 'px';
+  draggedElement.style.top = currTop + dy + 'px';
 }
 
 function handleMouseUp(e) {

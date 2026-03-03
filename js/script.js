@@ -486,6 +486,13 @@ document.getElementById("labPrev_57") &&
     document
     .getElementById("labPrev_59")
     .addEventListener("click", () => goTo(58));
+    document
+    .getElementById("gambar-6") &&
+  document
+    .getElementById("gambar-6")
+    .addEventListener("click", () => goTo(60));
+    // navigation for newly added screen61
+
 
 // Klik bubble menu (Page 3)
 document.querySelectorAll(".orbit .bubble").forEach((b) => {
