@@ -416,3 +416,84 @@ body{
   background: url("../assets/ITEM VLAB/2.png") center/cover no-repeat;
   z-index:0;
 }
+
+/* ===== UJI LUGOL LAYOUT ===== */
+.lugol-container {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2%;
+  padding: 5% 3%;
+  z-index: 3;
+}
+
+.lugol-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 3%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lugol-title {
+  font-family: "Fredoka", system-ui, sans-serif;
+  font-weight: 800;
+  color: #163e7a;
+  font-size: clamp(16px, 2.2vw, 28px);
+  margin: 0 0 3% 0;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lugol-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4%;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  justify-items: center;
+}
+
+/* Petri Dish & Test Tube Images */
+.petri-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: min(2vw, 20px);
+  position: relative;
+}
+
+.petri-label {
+  position: absolute;
+  top: -35px;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: clamp(12px, 1.5vw, 18px);
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.petri-image {
+  width: min(130px, 13vw);
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.test-tube-image {
+  width: min(70px, 8vw);
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}

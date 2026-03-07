@@ -60,6 +60,7 @@ const screens = {
   58: document.getElementById("screen58"),
   59: document.getElementById("screen59"),
   60: document.getElementById("screen60"),
+  61: document.getElementById("screen61"),
 };
 function goTo(n) {
   Object.values(screens).forEach((s) => s && s.classList.remove("active"));
@@ -491,7 +492,14 @@ document.getElementById("labPrev_57") &&
   document
     .getElementById("gambar-6")
     .addEventListener("click", () => goTo(60));
-    // navigation for newly added screen61
+
+    document
+    .getElementById("labNext_59")
+    .addEventListener("click", () => goTo(61));
+    document
+    .getElementById("labPrev_new")
+    .addEventListener("click", () => goTo(60));
+    
 
 
 // Klik bubble menu (Page 3)

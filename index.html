@@ -2046,7 +2046,11 @@ setupDraggableItems();
     <button class="home-btn" id="labHome_60" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
     <button class="nav-btn nav-prev" id="labPrev_60" aria-label="Kembali ke pertanyaan"><img src="assets/btn-prev.png" alt=""></button>
     
-    <button class="nav-btn nav-next" id="labNext_60" aria-label="Lanjut ke evaluasi 2"><img src="assets/btn-next.png" alt=""></button>
+            <!-- use a relative URL and forward slashes so the browser can resolve the page correctly -->
+            <button class="nav-btn nav-next" id="labNext_60"
+              aria-label="Lanjut ke evaluasi 2">
+      <img src="assets/btn-next.png" alt="">
+    </button>
     <div class="intro-area mainContainer" style="top: 5%; height: 90%; position: absolute; width: 100%; margin-top: 30rem; margin-left: 2rem; overflow: hidden;">
        <div style="display: flex; flex-direction: column; height: 100%; position: relative; width: 100%;">
           <!-- RAK (shelf at top) -->
@@ -2090,34 +2094,81 @@ setupDraggableItems();
       });
   });
 
-    // Menambahkan event listener untuk gambar agar dapat digerakkan
-  function allowDrop(ev) {
-    ev.preventDefault(); // Mencegah perilaku default untuk area drop
-  }
+   // Function to allow the drop in the target area
+function allowDrop(ev) {
+    ev.preventDefault(); // Prevent default behavior for drop area
+}
 
-  function dragStart(ev) {
-    ev.dataTransfer.setData("text", ev.target.id); // Menyimpan ID gambar yang sedang di-drag
-  }
+// Function to handle the start of dragging
+function dragStart(ev) {
+    ev.dataTransfer.setData("text", ev.target.id); // Save the ID of the image being dragged
+    ev.target.style.opacity = '0.5'; // Make the dragged image semi-transparent
+}
 
-  function dragEnd(ev) {
-    ev.target.style.transform = 'scale(1)'; // Mengembalikan gambar ke ukuran semula setelah drag selesai
-  }
+// Function to handle the end of dragging
+function dragEnd(ev) {
+    ev.target.style.opacity = '1'; // Reset the opacity to full when dragging ends
+}
 
-  function drop(ev) {
-    ev.preventDefault(); // Mencegah perilaku default browser
+// Function to handle the drop action (swap images)
+function drop(ev) {
+    ev.preventDefault(); // Prevent the default browser behavior
 
-    const data = ev.dataTransfer.getData("text"); // Mendapatkan ID gambar yang sedang dipindahkan
-    const draggedElement = document.getElementById(data); // Menangkap elemen gambar yang sedang dipindahkan
-    const droppedElement = ev.target; // Menangkap elemen gambar yang disentuh (dijatuhkan)
+    const data = ev.dataTransfer.getData("text"); // Get the ID of the dragged image
+    const draggedElement = document.getElementById(data); // Get the dragged image element
+    const droppedElement = ev.target; // Get the image where it was dropped
 
-    // Memastikan gambar yang dijatuhkan adalah gambar lain dan bukan area kosong
+    // Ensure that the dropped element is an image and not the same element
     if (droppedElement.tagName.toLowerCase() === 'img' && draggedElement !== droppedElement) {
+        // Swap the src attributes of the two images
         const tempSrc = draggedElement.src;
         draggedElement.src = droppedElement.src;
         droppedElement.src = tempSrc;
     }
-  }
+}
+
+// Add event listeners to make the images draggable
+const draggableImages = document.querySelectorAll('.draggable-item');
+draggableImages.forEach(img => {
+    img.addEventListener('dragstart', dragStart); // Attach dragstart event to each image
+    img.addEventListener('dragend', dragEnd); // Attach dragend event to each image
+});
+
+// Ensure that the drop area is properly set up (assuming drop area exists)
+const dropArea = document.querySelector('.dropArea');
+if (dropArea) {
+    dropArea.addEventListener('dragover', allowDrop); // Allow dragging over the drop area
+    dropArea.addEventListener('drop', drop); // Handle the drop event
+}
 </script>
+
+
+<section id="screen61" class="screen active intro-wrap" aria-label="Halaman 35: evaluasi (unggah jawaban)">
+  <main class="stage">
+    <div class="bg"></div>
+    <img class="board" src="assets/ITEM VLAB/3.png" alt="">
+
+    <button class="home-btn" id="labHome_new" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+    <button class="nav-btn nav-prev" id="labPrev_new" aria-label="Kembali ke pertanyaan"><img src="assets/btn-prev.png" alt=""></button>
+    
+    <button class="nav-btn nav-next" id="labNext_new61"
+            aria-label="Lanjut ke evaluasi 2">
+      <img src="assets/btn-next.png" alt="">
+    </button>
+    <div>
+        <div>
+
+        </div>
+        <img src="" alt="">
+        <div>
+
+        </div>
+        <img src="" alt="">
+    </div>
+    
+  </main>
+</section>
+
 
 
 <script src="js/script.js"></script>
