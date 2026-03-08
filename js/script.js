@@ -61,6 +61,12 @@ const screens = {
   59: document.getElementById("screen59"),
   60: document.getElementById("screen60"),
   61: document.getElementById("screen61"),
+  62: document.getElementById("screen62"),
+  63: document.getElementById("screen63"),
+  64: document.getElementById("screen64"),
+  65: document.getElementById("screen65"),
+  66: document.getElementById("screen66"),
+  67: document.getElementById("screen67"),
 };
 function goTo(n) {
   Object.values(screens).forEach((s) => s && s.classList.remove("active"));
@@ -285,6 +291,9 @@ document.getElementById("labHome_56") &&
     document
     .getElementById("labHome_59")
     .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labHome_new")
+    .addEventListener("click", () => goTo(3));
 
 // screen next
 document.getElementById("infoNext") &&
@@ -494,11 +503,40 @@ document.getElementById("labPrev_57") &&
     .addEventListener("click", () => goTo(60));
 
     document
-    .getElementById("labNext_59")
+    .getElementById("labNext_60")
     .addEventListener("click", () => goTo(61));
     document
     .getElementById("labPrev_new")
     .addEventListener("click", () => goTo(60));
+    document
+    .getElementById("labNext_new61")
+    .addEventListener("click", () => goTo(62));
+    document
+    .getElementById("infoNext_62")
+    .addEventListener("click", () => goTo(29));
+     document
+    .getElementById("infoNext_52")
+    .addEventListener("click", () => goTo(63));
+     document
+    .getElementById("labNext_63")
+    .addEventListener("click", () => goTo(64));
+ document
+    .getElementById("labHome_64")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labNext_64")
+    .addEventListener("click", () => goTo(65));
+
+    document
+    .getElementById("gambar-5") &&
+  document
+    .getElementById("gambar-5")
+    .addEventListener("click", () => goTo(3));
+
+    document
+    .getElementById("labNext_66")
+    .addEventListener("click", () => goTo(67));
+
     
 
 
@@ -569,4 +607,46 @@ if (form) {
     41, 42, 43, 44, 45, 46, 47, 48,
   ]);
   goTo(allowed.has(last) ? last : 1);
-})();
+})()
+
+document.addEventListener("DOMContentLoaded", function () {
+  const nextBtn = document.getElementById("labNext_new1");
+  const prevBtn = document.getElementById("labPrev_2");
+  const homeBtn1 = document.getElementById("labHome66");
+  const homeBtn2 = document.getElementById("labHome_2");
+
+  const screen1 = document.getElementById("screen_new");
+  const screen2 = document.getElementById("screen_new2");
+
+  if (nextBtn && screen1 && screen2) {
+    nextBtn.addEventListener("click", function () {
+      screen1.style.display = "none";
+      screen1.classList.remove("active");
+
+      screen2.style.display = "block";
+      screen2.classList.add("active");
+    });
+  }
+
+  if (prevBtn && screen1 && screen2) {
+    prevBtn.addEventListener("click", function () {
+      screen2.style.display = "none";
+      screen2.classList.remove("active");
+
+      screen1.style.display = "block";
+      screen1.classList.add("active");
+    });
+  }
+
+  if (homeBtn1) {
+    homeBtn1.addEventListener("click", function () {
+      window.location.href = "index.html";
+    });
+  }
+
+  if (homeBtn2) {
+    homeBtn2.addEventListener("click", function () {
+      window.location.href = "index.html";
+    });
+  }
+});
