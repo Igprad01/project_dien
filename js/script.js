@@ -73,6 +73,7 @@ const screens = {
   71: document.getElementById("screen71"),
   72: document.getElementById("screen72"),
   73: document.getElementById("screen73"),
+  74: document.getElementById("screen74"),
 };
 function goTo(n) {
   Object.values(screens).forEach((s) => s && s.classList.remove("active"));
@@ -626,6 +627,39 @@ document.getElementById("labPrev_57") &&
     .addEventListener("click", () => goTo(3));
     document
     .getElementById("labHome_70")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labHome_71")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labHome_72")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labHome_73")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labNext_72")
+    .addEventListener("click", () => goTo(73));
+    document
+    .getElementById("labPrev_72")
+    .addEventListener("click", () => goTo(71));
+    document
+    .getElementById("labHome_72")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labNext_73")
+    .addEventListener("click", () => goTo(74));
+    document
+    .getElementById("labPrev_73")
+    .addEventListener("click", () => goTo(72));
+    document
+    .getElementById("labHome_73")
+    .addEventListener("click", () => goTo(3));
+    document
+    .getElementById("labPrev_74")
+    .addEventListener("click", () => goTo(73));
+    document
+    .getElementById("labHome_74")
     .addEventListener("click", () => goTo(3));
 
 
