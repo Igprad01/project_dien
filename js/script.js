@@ -74,6 +74,7 @@ const screens = {
   72: document.getElementById("screen72"),
   73: document.getElementById("screen73"),
   74: document.getElementById("screen74"),
+  75: document.getElementById("screen75"),
 };
 function goTo(n) {
   Object.values(screens).forEach((s) => s && s.classList.remove("active"));
