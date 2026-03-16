@@ -103,8 +103,8 @@ function goTo(n) {
 
 // ===== nav events umum
 document.getElementById("playBtn").addEventListener("click", () => goTo(2));
-document.getElementById("backBtn").addEventListener("click", () => goTo(1));
-document.getElementById("toPage2").addEventListener("click", () => goTo(2));
+document.getElementById("backBtn2").addEventListener("click", () => goTo(3));
+document.getElementById("toPage2").addEventListener("click", () => goTo(1));
 document.getElementById("p4Home").addEventListener("click", () => goTo(3));
 
 // Home & nav di Pendahuluan
@@ -118,7 +118,7 @@ document.getElementById("introPrev2").addEventListener("click", () => goTo(5));
 document.getElementById("descHome1").addEventListener("click", () => goTo(3));
 document.getElementById("descHome2").addEventListener("click", () => goTo(3));
 document.getElementById("descPrev1").addEventListener("click", () => goTo(3));
-document.getElementById("descNext1").addEventListener("click", () => goTo(8));
+document.getElementById("descNext1").addEventListener("click", () => goTo(45));
 document.getElementById("descPrev2").addEventListener("click", () => goTo(7));
 
 // Home & nav di Materi
@@ -422,7 +422,7 @@ document.getElementById("infoNext_56") &&
 document.getElementById("labBack_45") &&
   document
     .getElementById("labBack_45")
-    .addEventListener("click", () => goTo(8));
+    .addEventListener("click", () => goTo(7));
 document.getElementById("labBack_46") &&
   document
     .getElementById("labBack_46")
