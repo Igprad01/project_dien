@@ -106,6 +106,7 @@ document.getElementById("playBtn").addEventListener("click", () => goTo(2));
 document.getElementById("backBtn2").addEventListener("click", () => goTo(3));
 document.getElementById("toPage2").addEventListener("click", () => goTo(1));
 document.getElementById("p4Home").addEventListener("click", () => goTo(3));
+document.getElementById("p4Home-4").addEventListener("click", () => goTo(3));
 
 // Home & nav di Pendahuluan
 document.getElementById("introHome1").addEventListener("click", () => goTo(3));
