@@ -5,7 +5,7 @@
   --desk-w:70%;
 
   /* Page 2 (profil siswa) */
-  --avatar-d: clamp(150px, 18vw, 220px);
+  --avatar-d: clamp(60px, 18vw, 220px);
   --avatar-y: -12px;
 
   /* Page 3 (menu utama – orbit) */
@@ -389,7 +389,7 @@ body{
   display: flex !important;
   flex-direction: column !important;
   overflow: auto !important;
-  
+}
 
 .lab-container {
     display: flex;
@@ -500,60 +500,21 @@ body{
 
 /* ===== RESPONSIVE MOBILE DAN TABLET ===== */
 @media (max-aspect-ratio: 4/3), (max-width: 850px) {
-  /* Hilangkan rasio tetap 16:9 pada layar tipe potrait agar stage mengisi layar penuh secara vertikal */
-  .stage {
-    aspect-ratio: auto !important;
-    height: 90vh !important;
-    border-radius: 16px !important;
-  }
 
-  /* Papan akan direntangkan untuk mengisi tinggi layar tinggi */
-  .board {
-    width: 94% !important;
-    height: 86% !important;
-    object-fit: fill !important; /* Menarik dimensi board/papan agar proporsional secara vertikal */
-    top: 5% !important;
-  }
 
-  /* Area dalam papan diperbesar untuk scroll */
+  /* Area dalam papan diperbesar sedikit untuk kenyamanan scroll jika text panjang */
   .board-area, .p4-area, .intro-area {
     width: 86% !important;
-    height: 74% !important;
-    top: 10% !important;
+    top: 15% !important;
     overflow-y: auto !important;
     padding-bottom: 20px !important;
   }
   
   /* ===== PAGE 2: Profil Siswa ===== */
   #screen2 .p2-heading {
-    font-size: clamp(22px, 6vw, 38px) !important;
-    -webkit-text-stroke: 4px #fff !important;
-    text-align: center;
+    font-size: clamp(16px, 4vw, 38px) !important;
+    -webkit-text-stroke: 3px #fff !important;
     margin-bottom: 5px;
-  }
-
-  #screen2 .profile-grid {
-    grid-template-columns: 1fr !important;
-    row-gap: 12px !important;
-    justify-items: center !important;
-  }
-
-  #screen2 .avatar {
-    width: clamp(80px, 22vw, 130px) !important;
-    height: clamp(80px, 22vw, 130px) !important;
-    transform: none !important;
-    margin: 0 auto;
-  }
-
-  #screen2 .form {
-    width: 100% !important;
-    row-gap: 12px !important;
-  }
-
-  #screen2 .gold-btn {
-    width: min(200px, 65vw) !important;
-    justify-self: center !important;
-    margin-top: 10px !important;
   }
 
   /* Tombol kemabali diletakkan relatif dalam screen */
@@ -639,5 +600,280 @@ body{
   #screen2 .avatar {
     width: 80px !important;
     height: 80px !important;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  #screen2 .stage {
+    width: 100vw !important;
+    height: 100dvh !important;
+    aspect-ratio: unset !important;
+    border-radius: 0 !important;
+  }
+
+  #screen2 .char,
+  #screen2 .desk { display: none !important; }
+
+  #screen2 .board {
+    top: 42% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 94% !important;
+    height: auto !important;
+  }
+
+  /* Naik ke 38% dari sebelumnya 50% */
+  #screen2 .board-area {
+    position: absolute !important;
+    top: 38% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 72% !important;
+    height: auto !important;
+    row-gap: 14px;
+    padding: 12px 0;
+  }
+
+  #screen2 .p2-heading {
+    font-size: clamp(20px, 6vw, 28px);
+    -webkit-text-stroke: 3px #fff;
+  }
+
+  #screen2 .profile-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    row-gap: 12px;
+  }
+
+  #screen2 .avatar {
+    width: clamp(72px, 18vw, 100px) !important;
+    height: clamp(72px, 18vw, 100px) !important;
+    transform: none !important;
+  }
+
+  #screen2 .form {
+    width: 100%;
+    row-gap: 10px;
+  }
+
+  #screen2 .label { font-size: 12px; }
+
+  #screen2 .input {
+    font-size: 14px;
+    padding: .25rem .1rem .1rem;
+    border-bottom-width: 3px;
+  }
+
+  #screen2 .gold-btn {
+    justify-self: center !important;
+    width: clamp(160px, 50vw, 200px) !important;
+  }
+
+  #screen2 .gold-btn span {
+    font-size: clamp(15px, 4.5vw, 18px);
+  }
+
+  #screen2 .p2-back {
+    top: 12px !important;
+    right: 12px !important;
+    font-size: 11px;
+    padding: .28rem .5rem;
+    border-radius: 8px;
+    z-index: 10;
+  }
+}
+
+@media (max-width: 380px) {
+  #screen2 .board-area {
+    top: 36% !important;
+    width: 68% !important;
+  }
+
+  #screen2 .board {
+    top: 40% !important;
+  }
+}
+
+/* ===================== PAGE 3 — RESPONSIVE MOBILE & TABLET (LENGKAP) ===================== */
+
+/* ===== TABLET BESAR (max 1024px) ===== */
+@media (max-width: 1024px) {
+  #screen3 .stage {
+    width: min(1320px, 98vw);
+    aspect-ratio: 16/9;
+  }
+
+  #screen3 .orbit.semi {
+    --orbit-radius: clamp(155px, 17vw, 230px);
+    --bubble-size: clamp(80px, 11vw, 140px);
+  }
+
+  #screen3 .mascot {
+    width: clamp(180px, 22vw, 320px);
+  }
+}
+
+/* ===== TABLET KECIL (max 768px) ===== */
+@media (max-width: 768px) {
+  #screen3 .stage {
+    width: 100vw !important;
+    height: 100dvh !important;
+    aspect-ratio: unset !important;
+    border-radius: 0 !important;
+  }
+
+  #screen3 .orbit.semi {
+    left: 45% !important;
+    top: 55% !important;
+    transform: translate(-50%, -50%) !important;
+    --orbit-radius: clamp(140px, 22vw, 200px);
+    --bubble-size: clamp(74px, 13vw, 110px);
+  }
+
+  #screen3 .orbit.semi .bubble {
+    width: var(--bubble-size) !important;
+  }
+
+  #screen3 .mascot {
+    width: clamp(180px, 30vw, 280px) !important;
+    left: 45% !important;
+    transform: translateX(-50%) !important;
+    bottom: 18% !important;
+  }
+
+  #screen3 .desk-top {
+    width: 90% !important;
+    bottom: 20% !important;
+  }
+
+  #screen3 .desk-front {
+    width: 120% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  #screen3 .menu-title {
+    font-size: clamp(15px, 3vw, 24px);
+    -webkit-text-stroke: 4px #fff;
+    top: 10px;
+    left: 10px;
+  }
+
+  #screen3 .btn-mini {
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: .3rem .5rem;
+  }
+}
+
+/* ===== MOBILE (max 600px) ===== */
+@media (max-width: 600px) {
+  #screen3 .stage {
+    width: 100vw !important;
+    height: 100dvh !important;
+    aspect-ratio: unset !important;
+    border-radius: 0 !important;
+  }
+
+  #screen3 .desk-top {
+    display: none !important;
+  }
+
+  #screen3 .desk-front {
+    display: block !important;
+    width: 140% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: -2% !important;
+    z-index: 6;
+  }
+
+  #screen3 .mascot {
+    display: block !important;
+    width: clamp(180px, 46vw, 240px) !important;
+    left: 40% !important;
+    transform: translateX(-50%) !important;
+    bottom: 18% !important;
+    z-index: 5;
+  }
+
+  #screen3 .orbit.semi {
+    left: 40% !important;
+    top: 58% !important;
+    transform: translate(-50%, -50%) !important;
+    --orbit-radius: clamp(140px, 38vw, 200px);
+    --bubble-size: clamp(72px, 19vw, 105px);
+  }
+
+  #screen3 .orbit.semi .bubble {
+    width: var(--bubble-size) !important;
+  }
+
+  #screen3 .menu-title {
+    font-size: 14px;
+    -webkit-text-stroke: 3px #fff;
+    top: 10px;
+    left: 10px;
+  }
+
+  #screen3 .btn-mini {
+    top: 10px;
+    right: 10px;
+    font-size: 11px;
+    padding: .28rem .45rem;
+  }
+}
+
+/* ===== MOBILE KECIL (max 380px) ===== */
+@media (max-width: 380px) {
+  #screen3 .stage {
+    width: 100vw !important;
+    height: 100dvh !important;
+    aspect-ratio: unset !important;
+    border-radius: 0 !important;
+  }
+
+  #screen3 .desk-top {
+    display: none !important;
+  }
+
+  #screen3 .desk-front {
+    width: 150% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: -2% !important;
+  }
+
+  #screen3 .mascot {
+    left: 40% !important;
+    width: clamp(150px, 42vw, 190px) !important;
+    bottom: 16% !important;
+  }
+
+  #screen3 .orbit.semi {
+    left: 40% !important;
+    top: 60% !important;
+    --orbit-radius: clamp(120px, 36vw, 165px) !important;
+    --bubble-size: clamp(62px, 18vw, 88px) !important;
+  }
+
+  #screen3 .orbit.semi .bubble {
+    width: var(--bubble-size) !important;
+  }
+
+  #screen3 .menu-title {
+    font-size: 13px;
+    top: 10px;
+    left: 10px;
+  }
+
+  #screen3 .btn-mini {
+    font-size: 10px;
+    padding: .25rem .4rem;
+    top: 10px;
+    right: 10px;
   }
 }

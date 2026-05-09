@@ -334,3 +334,153 @@ body{
   .t-stem{ -webkit-text-stroke:7px #fff }
   .t-berbasis,.t-materi{ -webkit-text-stroke:4px #fff }
 }
+
+/* ===================== PAGE 2 — RESPONSIVE MOBILE & TABLET ===================== */
+
+/* === TABLET (max 900px) === */
+@media (max-width: 900px) {
+  /* Board lebih lebar */
+  .board-area {
+    width: 88%;
+    top: 15%;
+    height: auto;
+  }
+
+  /* Avatar + form: stack vertikal */
+  .profile-grid {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    justify-items: center;
+  }
+
+  .avatar {
+    width: clamp(90px, 18vw, 130px);
+    height: clamp(90px, 18vw, 130px);
+    transform: none;
+  }
+
+  .form {
+    width: 100%;
+    row-gap: 12px;
+  }
+
+  .gold-btn {
+    justify-self: center;
+    width: min(220px, 55vw);
+  }
+
+  .p2-heading {
+    font-size: clamp(22px, 4.5vw, 40px);
+    -webkit-text-stroke: 4px #fff;
+  }
+
+  .label {
+    font-size: clamp(12px, 2vw, 15px);
+  }
+
+  .input {
+    font-size: clamp(13px, 2.2vw, 17px);
+  }
+}
+
+/* === MOBILE (max 600px) === */
+@media (max-width: 600px) {
+  /* Stage full lebar */
+  .stage {
+    width: 100vw;
+    aspect-ratio: auto;
+    min-height: 100dvh;
+    border-radius: 0;
+  }
+
+  /* Karakter kiri-kanan sembunyikan agar ruang lega */
+  .char.left,
+  .char.right {
+    display: none;
+  }
+
+  /* Meja sembunyikan */
+  .desk {
+    display: none;
+  }
+
+  /* Board full lebar */
+  .board {
+    top: 6%;
+    width: 96%;
+  }
+
+  .board-area {
+    width: 80%;
+    top: 12%;
+    row-gap: 10px;
+  }
+
+  .p2-heading {
+    font-size: clamp(18px, 6vw, 28px);
+    -webkit-text-stroke: 3px #fff;
+  }
+
+  /* Avatar lebih kecil */
+  .avatar {
+    width: clamp(72px, 20vw, 100px);
+    height: clamp(72px, 20vw, 100px);
+  }
+
+  .form {
+    row-gap: 10px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .input {
+    font-size: 14px;
+    padding: .3rem .1rem .1rem;
+    border-bottom-width: 3px;
+  }
+
+  .gold-btn {
+    width: min(180px, 58vw);
+    justify-self: center;
+  }
+
+  .gold-btn span {
+    font-size: clamp(15px, 4.5vw, 20px);
+  }
+
+  /* Tombol back */
+  .p2-back {
+    right: 10px;
+    top: 10px;
+    font-size: 12px;
+    padding: .35rem .55rem;
+    border-radius: 8px;
+  }
+}
+
+/* === MOBILE KECIL (max 400px) === */
+@media (max-width: 400px) {
+  .board-area {
+    width: 76%;
+    top: 10%;
+  }
+
+  .p2-heading {
+    font-size: 16px;
+  }
+
+  .avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .input {
+    font-size: 13px;
+  }
+
+  .gold-btn {
+    width: 55vw;
+  }
+}

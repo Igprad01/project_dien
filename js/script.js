@@ -918,22 +918,40 @@ document.querySelectorAll("#screen28 .choice").forEach((choice) => {
 // ===== form profil (Page 2)
 const form = document.getElementById("formProfil");
 if (form) {
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
+    
+    // Ambil data input
     const data = Object.fromEntries(new FormData(form).entries());
-    localStorage.setItem("profilSiswa", JSON.stringify(data));
-    goTo(3);
+    
+    try {
+      // Kirim request ke backend
+      const response = await fetch('backend/login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      
+      const result = await response.json();
+      
+      if (result.status === 'success') {
+        // Data tidak lagi disimpan di browser (form akan kosong saat refresh)
+        alert(result.message);
+        goTo(3); // Lanjut ke halaman menu
+      } else {
+        alert("Gagal masuk: " + result.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Terjadi kesalahan sistem, pastikan backend Anda berjalan.");
+    }
   });
 }
 
 // ===== restore state on load
-(function init() {
-  try {
-    const saved = JSON.parse(localStorage.getItem("profilSiswa") || "{}");
-    if (form && saved.nama) form.elements["nama"].value = saved.nama;
-    if (form && saved.email) form.elements["email"].value = saved.email;
-  } catch {}
+(async function init() {
+  // Kode untuk restore/kunci session dilepas agar form selalu bersih saat refresh
   const last = Number(localStorage.getItem("currentScreen") || 1);
   // if (last===3 && !localStorage.getItem('profilSiswa')) { goTo(2); return; }
   // izinkan semua halaman yang tersedia (termasuk 36)

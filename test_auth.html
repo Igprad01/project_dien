@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Auth Backend PHP</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        .box { padding: 15px; border: 1px solid #ccc; margin-bottom: 20px; border-radius: 5px; }
+        input { display: block; margin-bottom: 10px; width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 3px; }
+        button:hover { background: #0056b3; }
+        pre { background: #222; color: #0f0; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+
+    <h2>Test Sistem Autentikasi (PHP MySQL)</h2>
+
+    <div class="box">
+        <h3>1. Buat Akun Baru (Register)</h3>
+        <input type="text" id="regStrUsername" placeholder="Username">
+        <input type="password" id="regStrPassword" placeholder="Password">
+        <button onclick="testRegister()">Register</button>
+    </div>
+
+    <div class="box">
+        <h3>2. Login</h3>
+        <input type="text" id="logUsername" placeholder="Username">
+        <input type="password" id="logPassword" placeholder="Password">
+        <button onclick="testLogin()">Login</button>
+    </div>
+
+    <div class="box">
+        <h3>3. Cek Status Login Saat Ini (Session)</h3>
+        <button onclick="testAuthCheck()" style="background: #28a745;">Cek Status Login</button>
+    </div>
+
+    <div class="box">
+        <h3>4. Logout</h3>
+        <button onclick="testLogout()" style="background: #dc3545;">Logout</button>
+    </div>
+
+    <h3>Output / Respons Backend:</h3>
+    <pre id="outputLog">Belum ada respons...</pre>
+
+    <script>
+        function logOutput(data) {
+            document.getElementById('outputLog').textContent = JSON.stringify(data, null, 4);
+        }
+
+        async function testRegister() {
+            const formData = new FormData();
+            formData.append('username', document.getElementById('regStrUsername').value);
+            formData.append('password', document.getElementById('regStrPassword').value);
+
+            try {
+                const response = await fetch('backend/register.php', { method: 'POST', body: formData });
+                const data = await response.json();
+                logOutput(data);
+                if(data.status === 'success') {
+                    alert('Berhasil register! Silakan coba Login dengan akun tersebut.');
+                }
+            } catch(e) { logOutput({ error: 'Gagal menghubungi server', details: e.message }); }
+        }
+
+        async function testLogin() {
+            const formData = new FormData();
+            formData.append('username', document.getElementById('logUsername').value);
+            formData.append('password', document.getElementById('logPassword').value);
+
+            try {
+                const response = await fetch('backend/login.php', { method: 'POST', body: formData });
+                const data = await response.json();
+                logOutput(data);
+                if(data.status === 'success') {
+                    alert('Login berhasil! Coba klik tombol "Cek Status Login"');
+                }
+            } catch(e) { logOutput({ error: 'Gagal menghubungi server', details: e.message }); }
+        }
+
+        async function testAuthCheck() {
+            try {
+                const response = await fetch('backend/auth_check.php');
+                const data = await response.json();
+                logOutput(data);
+            } catch(e) { logOutput({ error: 'Gagal menghubungi server', details: e.message }); }
+        }
+
+        async function testLogout() {
+            try {
+                const response = await fetch('backend/logout.php');
+                const data = await response.json();
+                logOutput(data);
+                alert('Berhasil logout!');
+            } catch(e) { logOutput({ error: 'Gagal menghubungi server', details: e.message }); }
+        }
+    </script>
+</body>
+</html>

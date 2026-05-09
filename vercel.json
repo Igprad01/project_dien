@@ -1,0 +1,20 @@
+{
+  "functions": {
+    "backend/*.php": {
+      "runtime": "vercel-php@0.6.2"
+    }
+  },
+  "routes": [
+    {
+      "src": "/data-siswa",
+      "dest": "/backend/export_csv.php"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}

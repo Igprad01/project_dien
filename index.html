@@ -39,26 +39,26 @@
   <section id="screen2" class="screen" aria-label="Halaman 2: Profil Siswa">
     <main class="stage">
       <div class="bg"></div>
-       <button id="p4Home" class="home-btn" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
+       <button id="p4Home" class="home-btn" style="display: none;" aria-label="Kembali ke Menu"><img src="assets/btn-home.png" alt=""></button>
 
 
       <img class="board" src="assets/board.png" alt="">
-      <button id="backBtn2" class="p2-back" type="button">← Kembali</button>
+      <button id="backBtn2" class="p2-back" style="display: none;" type="button">← Kembali</button>
       <div class="board-area">
         <h2 class="p2-heading">PROFIIL SISWA</h2>
 
         <div class="profile-grid">
           <div class="avatar"><img src="assets/avatar.png" alt="Foto profil siswa"></div>
 
-          <form id="formProfil" class="form" autocomplete="on">
+          <form id="formProfil" class="form" autocomplete="off">
             <label class="field">
               <span class="label">Masukan Nama</span>
-              <input class="input" name="nama" type="text" placeholder="Nama lengkap" required>
+              <input class="input" name="nama" type="text" placeholder="Nama lengkap" autocomplete="off" required>
             </label>
 
             <label class="field">
               <span class="label">Masukan Email</span>
-              <input class="input" name="email" type="email" placeholder="email@contoh.com" required>
+              <input class="input" name="email" type="email" placeholder="email@contoh.com" autocomplete="off" required>
             </label>
 
             <button class="gold-btn" type="submit" aria-label="Masuk">
