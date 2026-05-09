@@ -55,7 +55,7 @@
             formData.append('password', document.getElementById('regStrPassword').value);
 
             try {
-                const response = await fetch('backend/register.php', { method: 'POST', body: formData });
+                const response = await fetch('api/register.php', { method: 'POST', body: formData });
                 const data = await response.json();
                 logOutput(data);
                 if(data.status === 'success') {
@@ -70,7 +70,7 @@
             formData.append('password', document.getElementById('logPassword').value);
 
             try {
-                const response = await fetch('backend/login.php', { method: 'POST', body: formData });
+                const response = await fetch('api/login.php', { method: 'POST', body: formData });
                 const data = await response.json();
                 logOutput(data);
                 if(data.status === 'success') {
@@ -81,7 +81,7 @@
 
         async function testAuthCheck() {
             try {
-                const response = await fetch('backend/auth_check.php');
+                const response = await fetch('api/auth_check.php');
                 const data = await response.json();
                 logOutput(data);
             } catch(e) { logOutput({ error: 'Gagal menghubungi server', details: e.message }); }
@@ -89,7 +89,7 @@
 
         async function testLogout() {
             try {
-                const response = await fetch('backend/logout.php');
+                const response = await fetch('api/logout.php');
                 const data = await response.json();
                 logOutput(data);
                 alert('Berhasil logout!');
