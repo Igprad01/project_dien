@@ -18,6 +18,12 @@ if ($port == '4000') {
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password, $options);
 } catch(PDOException $e) {
-    die("Koneksi database gagal: " . $e->getMessage());
+    // Memberikan output JSON agar frontend Javascript bisa membacanya tanpa error Try-Catch Parser
+    header('Content-Type: application/json');
+    echo json_encode([
+        'status' => 'error', 
+        'message' => 'Koneksi TiDB Database Galat: ' . $e->getMessage()
+    ]);
+    exit;
 }
 ?>
