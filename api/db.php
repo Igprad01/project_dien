@@ -1,9 +1,14 @@
 <?php
-$host = getenv('DB_HOST') ?: 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com';
-$port = getenv('DB_PORT') ?: '4000';
-$dbname = getenv('DB_NAME') ?: 'virtual_lab_db';    
-$username = getenv('DB_USER') ?: '393n2ZrCGirn4Yu.root'; 
-$password = getenv('DB_PASS') !== false ? getenv('DB_PASS') : 'rvtDP41uIv6j6TMZ';
+// Jika file config.php ada (di local), pakai data di dalamnya. Jika di Vercel, kita akan pakai getenv()
+if (file_exists(__DIR__ . '/config.php')) {
+    require_once __DIR__ . '/config.php';
+}
+
+$host = getenv('DB_HOST') ?: ($db_host_local ?? '');
+$port = getenv('DB_PORT') ?: ($db_port_local ?? '4000');
+$dbname = getenv('DB_NAME') ?: ($db_name_local ?? '');    
+$username = getenv('DB_USER') ?: ($db_user_local ?? ''); 
+$password = getenv('DB_PASS') !== false ? getenv('DB_PASS') : ($db_pass_local ?? '');
 
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
