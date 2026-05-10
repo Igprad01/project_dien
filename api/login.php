@@ -37,6 +37,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
 
             // 2. Data disimpan ke SQL (CSV akan disediakan via endpoint terpisah)
+            
+            // 3. Simpan data ke Google Spreadsheet (Webhook)
+            // Ganti URL_WEBHOOK_DISINI dengan URL Web App dari Google Apps Script Anda (jika di-hosting Vercel, bisa dari env variable)
+            $webhook_url = getenv('SPREADSHEET_WEBHOOK_URL') ?: 'URL_WEBHOOK_DISINI';
+            
+            if ($webhook_url !== 'URL_WEBHOOK_DISINI') {
+                $ch = curl_init($webhook_url);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+                    'nama' => $nama,
+                    'email' => $email,
+                    'tanggal' => date('Y-m-d H:i:s')
+                ]));
+                // Timeout di set 3 detik agar login tidak terlalu lama muter-muter (loading) saat nge-hit API Google
+                curl_setopt($ch, CURLOPT_TIMEOUT, 3);
+                curl_exec($ch);
+                curl_close($ch);
+            }
         }
 
         $_SESSION['user_id'] = $user['id'];
