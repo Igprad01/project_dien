@@ -8,12 +8,11 @@ $password = getenv('DB_PASS') !== false ? getenv('DB_PASS') : 'rvtDP41uIv6j6TMZ'
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => true, 
 ];
 
-
-if ($port == '4000') {
-    $options[PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT] = false;
-}
+// Menggunakan file sertifikat isrgrootx1.pem yang ditaruh di folder utama (root)
+$options[PDO::MYSQL_ATTR_SSL_CA] = __DIR__ . '/../isrgrootx1.pem';
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8", $username, $password, $options);
