@@ -1,2 +1,5 @@
 # Abaikan file berisi sandi database lokal
 api/config.php
+api/data_siswa.csv
+api/database.sql
+
